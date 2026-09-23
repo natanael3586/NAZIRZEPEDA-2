@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trayectoria | Irineo L. López Cruz</title>
+<meta name="description" content="Perfil académico de Irineo Lorenzo López Cruz — Universidad Autónoma Chapingo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafbfa;--surface:#fff;--surface-2:#f2f5f3;--texto:#1a2420;--gris:#5c6b64;--verde:#0e7a52;--verde-osc:#0a5c3e;--verde-claro:#e6f4ee;--acento:#b8860b;--borde:#e2e8e4;--sombra:0 2px 8px rgba(16,42,32,.06),0 12px 32px rgba(16,42,32,.07);--radio:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+[hidden]{display:none!important;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--texto);line-height:1.7;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4,.brand{font-family:'Sora',sans-serif;letter-spacing:-.02em;}
+a{color:var(--verde);}
+.contenedor{max-width:1120px;margin:0 auto;padding:0 24px;}
+/* Navbar */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--borde);}
+.nav-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;}
+.brand{font-weight:800;font-size:1.06rem;color:var(--texto);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.brand-dot{width:11px;height:11px;border-radius:3px;background:linear-gradient(135deg,var(--verde),#2ea87c);}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-link{color:var(--gris);text-decoration:none;font-size:.9rem;font-weight:600;padding:9px 18px;border-radius:8px;}
+.nav-link:hover{color:var(--texto);background:var(--surface-2);}
+.nav-link.active{color:#fff;background:var(--verde);}
+.nav-toggle{display:none;background:none;border:1px solid var(--borde);font-size:1.15rem;border-radius:8px;padding:5px 12px;cursor:pointer;}
+/* Encabezado */
+.page-hero{background:linear-gradient(160deg,var(--verde-osc),var(--verde));padding:88px 24px 64px;text-align:center;}
+.page-hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff;}
+.page-sub{color:rgba(255,255,255,.85);max-width:720px;margin:14px auto 0;}
+/* Índice de secciones */
+.indice{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-top:22px;}
+.indice a{color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;opacity:.85;}
+.indice a:hover{opacity:1;text-decoration:underline;}
+/* Secciones */
+.seccion{padding:56px 0;}
+.seccion.alt{background:var(--surface-2);}
+.titulo{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:20px;scroll-margin-top:80px;}
+.subtitulo{font-size:1.1rem;margin:32px 0 14px;}
+.intro{color:var(--gris);margin:-8px 0 18px;}
+.panel{background:var(--surface);border:1px solid var(--borde);border-radius:var(--radio);padding:32px;box-shadow:var(--sombra);}
+.panel p{color:#33413b;text-align:justify;margin-bottom:12px;}
+.panel p:last-child{margin-bottom:0;}
+/* Tarjetas */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;}
+.tarjeta{background:var(--surface);border:1px solid var(--borde);border-radius:var(--radio);padding:22px 24px;}
+.tarjeta h3{font-size:1rem;line-height:1.4;margin-bottom:4px;}
+.tarjeta .meta{font-size:.85rem;color:var(--verde-osc);font-weight:600;}
+.tarjeta p{font-size:.88rem;color:var(--gris);margin-top:6px;}
+/* Listas simples */
+.lineas{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px 24px;}
+.lineas li{padding-left:14px;border-left:3px solid var(--verde);font-size:.93rem;}
+.etiquetas{display:flex;flex-wrap:wrap;gap:8px;}
+.etiqueta{font-size:.85rem;padding:6px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--borde);}
+.etiqueta b{color:var(--verde-osc);font-weight:700;}
+/* Línea de tiempo */
+.linea{position:relative;border-left:2px solid rgba(14,122,82,.25);margin-left:14px;padding-left:32px;}
+.evento{margin-bottom:24px;position:relative;}
+.evento::before{content:"";position:absolute;left:-40px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--verde);box-shadow:0 0 0 4px var(--verde-claro);}
+.evento .anio-ev{font-family:'Sora';font-weight:700;color:var(--verde);}
+.evento-card{background:var(--surface);border:1px solid var(--borde);border-radius:12px;padding:16px 22px;margin-top:4px;}
+.evento-card h4{font-size:1rem;margin-bottom:2px;}
+.evento-card p{font-size:.9rem;color:var(--gris);}
+/* Distinciones y evaluaciones */
+.lista{list-style:none;}
+.lista li{background:var(--surface);border:1px solid var(--borde);border-left:4px solid var(--verde);border-radius:10px;padding:14px 20px;margin-bottom:10px;font-size:.93rem;color:#33413b;}
+.lista li b{color:var(--texto);}
+.lista li small{display:block;color:var(--gris);font-size:.84rem;margin-top:2px;}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;color:#fff;background:var(--verde);border-radius:6px;padding:2px 10px;margin-right:8px;}
+.dest{display:inline-block;font-size:.7rem;font-weight:700;color:var(--acento);border:1px solid var(--acento);border-radius:999px;padding:0 8px;margin-left:6px;}
+/* Filtros de congresos */
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.chip{font:inherit;font-size:.85rem;font-weight:600;padding:7px 16px;border-radius:999px;border:1px solid var(--borde);background:var(--surface);color:var(--gris);cursor:pointer;}
+.chip:hover{border-color:var(--verde);color:var(--verde);}
+.chip.activo{background:var(--verde);border-color:var(--verde);color:#fff;}
+.buscador{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:24px;}
+.buscador label{width:100%;font-size:.85rem;font-weight:600;}
+.buscador input{flex:1 1 280px;font:inherit;padding:11px 14px;border:1px solid var(--borde);border-radius:10px;background:var(--surface);}
+.buscador input:focus{outline:2px solid var(--verde);outline-offset:1px;}
+.conteo,.vacio{font-size:.85rem;color:var(--gris);}
+.anio-grupo{display:grid;grid-template-columns:88px 1fr;gap:0 24px;border-top:1px solid var(--borde);padding:18px 0;}
+.anio{font-size:1.5rem;color:var(--verde);line-height:1.2;position:sticky;top:76px;align-self:start;}
+.lista-congresos{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.congreso b{display:block;line-height:1.45;}
+.congreso .trabajo{font-size:.9rem;color:#33413b;font-style:italic;}
+.congreso .meta{font-size:.84rem;color:var(--verde-osc);}
+/* Pie */
+.footer{border-top:1px solid var(--borde);background:var(--surface-2);padding:34px 0;text-align:center;color:var(--gris);font-size:.88rem;}
+@media(max-width:760px){
+  .nav-toggle{display:block;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--borde);padding:12px 24px;box-shadow:var(--sombra);}
+  .nav-links.open{display:flex;}
+  .anio-grupo{grid-template-columns:1fr;}
+  .anio{position:static;font-size:1.25rem;margin-bottom:8px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Irineo L. López Cruz</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="publicaciones.html" class="nav-link">Publicaciones</a>
+      <a href="docencia.html" class="nav-link">Docencia</a>
+      <a href="trayectoria.html" class="nav-link active">Trayectoria</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <h1>Trayectoria</h1>
+  <p class="page-sub">Formación, empleo, estancias, distinciones, congresos y evaluaciones</p>
+  <nav class="indice" aria-label="Secciones de la página">
+    <a href="#perfil">Perfil</a><a href="#formacion">Formación</a><a href="#estancias">Estancias</a>
+    <a href="#cronologia">Cronología</a><a href="#distinciones">Distinciones</a>
+    <a href="#congresos">Congresos</a><a href="#evaluaciones">Evaluaciones</a>
+  </nav>
+</header>
+
+<!-- PERFIL -->
+<section class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo" id="perfil">Perfil</h2>
+    <div class="panel">
+      <p>PhD en Agricultural Engineering por la Universidad de Wageningen (Países Bajos, 1997–2002). Desde 1985 es Profesor-Investigador de tiempo completo de la Universidad Autónoma Chapingo, actualmente en el Postgrado en Ingeniería Agrícola y Uso Integral del Agua y en el Departamento de Ingeniería Mecánica Agrícola.</p>
+      <p>Fue becario CONACyT para estudios de doctorado en el extranjero (1997–2002), obtuvo beca de repatriación y consolidación institucional (2003) y es miembro del Sistema Nacional de Investigadores desde 2005. Recibió el Premio Estado de México de Ciencia y Tecnología en el área de Ingeniería y Tecnología (2018). Es miembro regular de la Academia Mexicana de Ciencias (desde 2020), miembro de la International Society for Horticultural Science (ISHS) y, desde 2024, del Consejo Editorial de la revista <i>Biosystems Engineering</i>.</p>
+      <p>Su línea principal es la Ingeniería en Biosistemas: modelación matemática, optimización y control de biosistemas; modelación y control del clima de ambientes agrícolas controlados (invernaderos, fábricas de plantas, secadores solares, biorreactores); modelación del crecimiento de cultivos en invernadero y campo abierto, y aplicación de inteligencia artificial en la agricultura.</p>
+    </div>
+
+    <h3 class="subtitulo">Empleo actual</h3>
+    <div class="tarjeta">
+      <h3>Profesor Investigador de Tiempo Completo C2/TC</h3>
+      <div class="meta">Universidad Autónoma Chapingo · desde el 15 de febrero de 1985</div>
+      <p>Desarrollo de modelos del clima y de cultivos en invernaderos; optimización dinámica del ambiente de invernadero; uso de algoritmos evolutivos y de evolución diferencial en la optimización de modelos y biosistemas; diseño y modelación matemática de secadores solares tipo invernadero.</p>
+    </div>
+
+    <h3 class="subtitulo">Líneas de investigación</h3>
+    <ul class="lineas" id="lineas"></ul>
+
+    <h3 class="subtitulo">Área de conocimiento</h3>
+    <div class="etiquetas">
+      <span class="etiqueta"><b>Área:</b> Ciencias de Agricultura, Agropecuarias, Forestales y de Ecosistemas</span>
+      <span class="etiqueta"><b>Campo:</b> Ciencias Agrarias</span>
+      <span class="etiqueta"><b>Disciplina:</b> Ingeniería Agrícola</span>
+      <span class="etiqueta"><b>Subdisciplina:</b> Mecánica Agrícola</span>
+    </div>
+
+    <h3 class="subtitulo">Herramientas e idiomas</h3>
+    <div class="etiquetas" id="habilidades"></div>
+  </div>
+</section>
+
+<!-- FORMACIÓN -->
+<section class="seccion alt">
+  <div class="contenedor">
+    <h2 class="titulo" id="formacion">Formación académica</h2>
+    <div class="grid" id="formacionGrid"></div>
+
+    <h2 class="titulo" id="estancias" style="margin-top:48px;">Estancias de investigación (5)</h2>
+    <div class="grid" id="estanciasGrid"></div>
+  </div>
+</section>
+
+<!-- CRONOLOGÍA -->
+<section class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo" id="cronologia">Cronología</h2>
+    <div class="linea" id="linea"></div>
+  </div>
+</section>
+
+<!-- DISTINCIONES -->
+<section class="seccion alt">
+  <div class="contenedor">
+    <h2 class="titulo" id="distinciones">Distinciones y premios (22)</h2>
+    <ul class="lista" id="listaDistinciones"></ul>
+  </div>
+</section>
+
+<!-- CONGRESOS -->
+<section class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo" id="congresos">Participación en congresos (63)</h2>
+    <p class="intro">Congresos, simposios y seminarios registrados en el CVU, del más reciente al más antiguo.</p>
+    <div class="filtros" id="filtros"></div>
+    <div class="buscador">
+      <label for="buscar">Buscar por evento, trabajo, país o año</label>
+      <input type="search" id="buscar" placeholder="Ej. GreenSys, Kalman, Francia, 2017…" autocomplete="off">
+      <span class="conteo" id="conteo" aria-live="polite"></span>
+    </div>
+    <p class="vacio" id="vacio" hidden>Ninguna participación coincide con el filtro. Prueba con otra palabra o elige "Todas".</p>
+    <div id="congresosLista"></div>
+  </div>
+</section>
+
+<!-- EVALUACIONES -->
+<section class="seccion alt">
+  <div class="contenedor">
+    <h2 class="titulo" id="evaluaciones">Evaluaciones realizadas (9)</h2>
+    <p class="intro">Participación como evaluador de proyectos, informes y convocatorias de CONACyT (hoy SECIHTI).</p>
+    <ul class="lista" id="listaEvaluaciones"></ul>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Perfil académico generado a partir del CVU (No. 121196) — SECIHTI.</p>
+  <p><a href="mailto:ilopez@correo.chapingo.mx">ilopez@correo.chapingo.mx</a> · Universidad Autónoma Chapingo</p>
+</footer>
+
+<script>
+// ================= DATOS DEL CVU =================
+
+const LINEAS = [
+  "Modelación matemática, optimización y control de biosistemas agrícolas",
+  "Modelación matemática y control automático del biosistema invernadero",
+  "Modelación matemática y control automático de agricultura en ambiente controlado",
+  "Modelación matemática y simulación del crecimiento y desarrollo de cultivos en campo abierto",
+  "Modelación matemática, optimización y control de secadores solares tipo invernadero",
+  "Inteligencia artificial en biosistemas agrícolas: sistemas neurodifusos, computación evolutiva (algoritmos genéticos, estrategias evolutivas, evolución diferencial) y algoritmos bioinspirados"
+];
+
+// [herramienta, nivel]
+const HABILIDADES = [
+  ["MATLAB y Simulink", "Experto"], ["FST (Fortran Simulation Translator)", "Experto"],
+  ["Python", "Avanzado"], ["Lenguaje C", "Avanzado"], ["Lenguaje R", "Avanzado"],
+  ["Stella", "Avanzado"], ["NetLogo", "Intermedio"], ["Inglés", "Avanzado, certificado"]
+];
+
+// [grado, institución, nivel]
+const FORMACION = [
+  ["PhD in Agricultural Engineering", "Wageningen Agricultural University (Países Bajos)", "Doctorado · 1997–2002"],
+  ["Maestría en Ciencias en Inteligencia Artificial", "Fundación Arturo Rosenblueth, A.C.", "Maestría · Mención honorífica (1996)"],
+  ["Ingeniero Agrónomo Especialista en Zonas Áridas", "Universidad Autónoma Chapingo", "Licenciatura · Mención honorífica (1989)"]
+];
+
+// [institución, tipo, periodo, logros]
+const ESTANCIAS = [
+  ["Wageningen UR (Países Bajos)", "Estancia sabática", "Feb 2014 – Ene 2015", "Presentación oral en congreso internacional y publicación de artículo en revista internacional."],
+  ["Humboldt-Universität zu Berlin (Alemania)", "Estancia de investigación", "Jun – Jul 2014", "Participación en proyecto de investigación binacional."],
+  ["Humboldt-Universität zu Berlin (Alemania)", "Estancia de investigación", "Oct – Nov 2012", "Participación en proyecto de investigación binacional."],
+  ["Humboldt-Universität zu Berlin (Alemania)", "Estancia de investigación", "Jul – Ago 2009", "Participación en proyecto de investigación binacional."],
+  ["Universidad Autónoma de Querétaro", "Estancia sabática", "Ago 2007 – Jul 2008", "Publicación de artículos científicos e impartición de cursos de posgrado."]
+];
+
+// [año, título, descripción]
+const CRONOLOGIA = [
+  ["2024", "Consejo Editorial de Biosystems Engineering", "Se integra como miembro del Consejo Editorial de la revista Biosystems Engineering."],
+  ["2023", "Organizador de GreenSys 2023", "Organizador del International Symposium on New Technologies for Sustainable Greenhouse Systems (México) y evaluador de informes del Fondo Ciencia de Frontera."],
+  ["2022", "Producción científica y congresos internacionales", "Artículos en Remote Sensing, Agronomy, Biotecnia y Revista Mexicana de Ciencias Agrícolas; ponencia en el 31st International Horticultural Congress (Francia); tres tesis de doctorado y maestría concluidas."],
+  ["2021", "Conferencia magistral en CONIIN 2021", "Conferencia magistral en el XVII International Engineering Congress sobre modelación matemática de poblaciones de insectos plaga."],
+  ["2020", "Academia Mexicana de Ciencias", "Ingresa como miembro regular de la AMC; conferencia magistral en el Congreso Internacional Uso Racional del Agua (Colombia)."],
+  ["2019", "SNI nivel 2 y GreenSys 2019", "Renueva el nivel 2 del SNI; conferencia magistral en GreenSys 2019 (Francia); artículos en Biosystems Engineering e Ingeniería Investigación y Tecnología."],
+  ["2018", "Premio Estado de México de Ciencia y Tecnología", "Reconocimiento en el área de Ingeniería y Tecnología otorgado por el COMECyT; ponencia en el 30th International Horticultural Congress (Turquía)."],
+  ["2017", "Control, estimación y secadores solares", "Artículos en Acta Horticulturae sobre filtros de Kalman, asimilación de datos y control; ponencia en GreenSys 2017 (China) y conferencia magistral en el 13° Congreso Internacional de Ingeniería."],
+  ["2015", "SNI nivel 2", "Obtiene el nivel 2 del Sistema Nacional de Investigadores; ponencia en GreenSys 2015 (Portugal)."],
+  ["2014", "Estancia sabática en Wageningen UR", "Estancia sabática en Países Bajos (2014–2015) y estancia en la Humboldt-Universität zu Berlin; publicaciones sobre sensibilidad global y estimación de parámetros."],
+  ["2008", "SNI nivel 1 y estancia sabática en Querétaro", "Obtiene el nivel 1 del SNI; estancia sabática en la Universidad Autónoma de Querétaro (2007–2008)."],
+  ["2005", "Sistema Nacional de Investigadores", "Ingresa al SNI como candidato."],
+  ["2003", "Repatriación", "Beca de repatriación y consolidación institucional; publica en Applied Soft Computing y Computers and Electronics in Agriculture."],
+  ["2002", "Doctorado en Wageningen", "Concluye el PhD en Agricultural Engineering, con investigación en control óptimo y algoritmos de evolución diferencial."],
+  ["1996", "Maestría en Inteligencia Artificial", "Mención honorífica en el examen de maestría (Fundación Arturo Rosenblueth)."],
+  ["1985", "Inicio de la carrera en la UACh", "Profesor-Investigador de tiempo completo de la Universidad Autónoma Chapingo."]
+];
+
+// [año, distinción, institución, detalle]
+const DISTINCIONES = [
+  [2020, "Miembro regular de la Academia Mexicana de Ciencias", "Academia Mexicana de Ciencias, A.C.", ""],
+  [2019, "Sistema Nacional de Investigadores, nivel 2", "SECIHTI", ""],
+  [2018, "Premio Estatal de Ciencia y Tecnología", "Consejo Mexiquense de Ciencia y Tecnología", "Área de Ingeniería y Tecnología."],
+  [2016, "Premio Arturo Fregoso Urbina a la mejor tesis de posgrado 2015", "Universidad Autónoma Chapingo", "Director de la tesis doctoral \"Modelación del ambiente de un invernadero con y sin sistema de calefacción mediante dinámica de fluidos computacional 3D\"."],
+  [2015, "XVIII Premio Arturo Fregoso Urbina", "Universidad Autónoma Chapingo", "Director de la tesis doctoral \"Técnicas de inteligencia artificial en modelado y control del clima de invernaderos\" (2014)."],
+  [2015, "Sistema Nacional de Investigadores, nivel 2", "SECIHTI", ""],
+  [2012, "Premio Arturo Fregoso Urbina a la mejor tesis de maestría", "Universidad Autónoma Chapingo", "Director de la tesis \"Simulación del proceso de fermentación de cerveza artesanal\". Estudiante: Ángel Garduño García."],
+  [2011, "Premio Arturo Fregoso Urbina a la mejor tesis de maestría", "Universidad Autónoma Chapingo", "Director de la tesis \"Simulación de fotosíntesis foliar en tomate bajo invernadero mediante modelos teóricos y mediciones de fitomonitoreo\". Estudiante: José Manuel Vargas Sálla."],
+  [2011, "Sistema Nacional de Investigadores, nivel 1", "SECIHTI", ""],
+  [2009, "Premio Arturo Fregoso Urbina a la mejor tesis de maestría", "Universidad Autónoma Chapingo", "Director de la tesis \"Modelos para simulación y control del clima de un invernadero con ventilación natural\". Estudiante: Agustín Ruiz García."],
+  [2008, "Premio a la mejor tesis de maestría", "Universidad Autónoma de Querétaro", "Director de la tesis \"Modelación de la transpiración de tomate hidropónico en invernadero\" (Maestría en Ingeniería en Biosistemas). Estudiante: Magali Olivera López."],
+  [2008, "Sistema Nacional de Investigadores, nivel 1", "SECIHTI", ""],
+  [2005, "Sistema Nacional de Investigadores, candidato", "SECIHTI", ""],
+  [1997, "Beca para estudios en el extranjero", "CONACyT", "Beca crédito para estudios de doctorado en Wageningen University, Países Bajos."],
+  [1997, "Beca CONACyT", "CONACyT", ""],
+  [1996, "Mención honorífica", "Fundación Arturo Rosenblueth, A.C.", "Examen de Maestría en Inteligencia Artificial."],
+  [1989, "Mención honorífica", "Universidad Autónoma Chapingo", "Examen profesional."],
+  [1982, "Diploma de Cuadro de Honor", "Universidad Autónoma Chapingo", "Por destacado aprovechamiento académico."],
+  [1981, "Diploma de Cuadro de Honor", "Universidad Autónoma Chapingo", "Por destacado aprovechamiento académico."],
+  [1980, "Diploma de Cuadro de Honor", "Universidad Autónoma Chapingo", "Por destacado aprovechamiento académico."],
+  [1978, "Diploma de Cuadro de Honor", "Universidad Autónoma Chapingo", "Por destacado aprovechamiento académico."],
+  [1977, "Diploma de Cuadro de Honor", "Universidad Autónoma Chapingo", "Por destacado aprovechamiento académico."]
+];
+
+// [año, evento, trabajo presentado, tipo, país, destacado (1/0)]
+const CONGRESOS = [
+  [2023, "GreenSys 2023: International Symposium on New Technologies for Sustainable Greenhouse Systems", "Towards a modeling and control approach based on the drying product in greenhouses", "Organizador del evento", "México", 1],
+  [2022, "3er Congreso Nacional de Secado, Cocción y Refrigeración Solar de Alimentos", "Diseño de un controlador lineal predictivo basado en un modelo ARX para un secador solar tipo invernadero", "Ponencia", "México", 0],
+  [2022, "31st International Horticultural Congress", "Reliability of greenhouse climate dynamic models by uncertainty and sensitivity analyses, calibration and evaluation", "Ponencia", "Francia", 1],
+  [2021, "XVII International Engineering Congress CONIIN 2021", "Modelación matemática de poblaciones de insectos plaga en cultivos agrícolas", "Conferencia magistral", "México", 0],
+  [2020, "Congreso Internacional Uso Racional del Agua (USRA) e Ingeniería Agrícola", "Modelación matemática de biosistemas", "Conferencia magistral", "Colombia", 0],
+  [2019, "GreenSys 2019: International Symposium on Advanced Technologies and Management for Innovative Greenhouses", "Approaches for sensitivity and uncertainty analyses of dynamic mathematical models of greenhouse climate: an overview", "Conferencia magistral", "Francia", 1],
+  [2018, "30th International Horticultural Congress", "Uncertainty analyses of the VegSyst model applied to greenhouse crops", "Ponencia", "Turquía", 1],
+  [2017, "GreenSys 2017: International Symposium on New Technologies for Environment Control, Energy-Saving and Crop Production in Greenhouse and Plant Factory", "A comparison of VegSyst and Mod-VegSyst models in predicting dry matter, nitrogen uptake and transpiration of greenhouse grown tomatoes", "Ponencia", "China", 1],
+  [2017, "13° Congreso Internacional de Ingeniería", "Modelación matemática de biosistemas", "Conferencia magistral", "México", 0],
+  [2016, "5° Congreso Internacional de Investigación en Ciencias Básicas y Agronómicas", "Estimación de parámetros frecuentista y bayesiana en modelos dinámicos de crecimiento de cultivos en invernadero y su programación en MATLAB y R", "Ponencia", "México", 0],
+  [2016, "HortiModel 2016: Models for Plant Growth, Environment Control and Farming Management in Protected Cultivation", "A comparison of Bayesian and classical parameter estimation methods in greenhouse crop models", "Ponencia", "Francia", 1],
+  [2015, "Model-IT", "Recent developments and challenges in crop growth modelling: uncertainty analysis, global sensitivity analysis and data assimilation", "Conferencia magistral", "Países Bajos", 0],
+  [2015, "GreenSys 2015: International Symposium on New Technologies and Management for Greenhouses", "Performance of extended and unscented Kalman filters for state and parameter estimation of a greenhouse climate model", "Ponencia", "Portugal", 1],
+  [2013, "GreenSys 2013: International Symposium on New Technologies for Environmental Control, Energy-Saving and Crop Production in Greenhouse and Plant Factory", "Neuro-fuzzy modeling of transpiration rates of greenhouse tomatoes under temperate weather conditions of central Mexico", "Ponencia", "Corea del Sur", 1],
+  [2013, "GreenSys 2013: International Symposium on New Technologies for Environmental Control, Energy-Saving and Crop Production in Greenhouse and Plant Factory", "Modeling uncertainty of greenhouse lettuce growth model using Kalman filtering", "Ponencia", "Corea del Sur", 0],
+  [2013, "Segundo Congreso Internacional de Investigación en Ciencias Básicas y Agronómicas", "Metodología de modelación matemática dinámica de ambientes de agricultura controlada: avances y retos", "Ponencia", "México", 0],
+  [2012, "XIV Congreso Nacional Agronómico", "Análisis de sensibilidad global del modelo para crecimiento potencial de cultivos SUCROS aplicado a tomate de cáscara", "Ponencia", "México", 0],
+  [2012, "Fourth International Symposium on Models for Plant Growth, Environmental Control and Farm Management in Protected Cultivation", "A comparison of local and global sensitivity analyses for greenhouse crop models", "Ponencia", "China", 0],
+  [2012, "Primer Congreso Internacional de Ciencias Básicas y Agronómicas", "Simulación y análisis de sensibilidad global de un modelo complejo para lechugas", "Ponencia", "México", 0],
+  [2011, "GreenSys 2011: Advanced Technologies and Management towards Sustainable Greenhouse Ecosystem", "Global sensitivity analysis of greenhouse crop models", "Ponencia", "Grecia", 1],
+  [2011, "GreenSys 2011: Advanced Technologies and Management towards Sustainable Greenhouse Ecosystem", "Local and global sensitivity analyses of a greenhouse crop transpiration model", "Póster", "Grecia", 0],
+  [2011, "Segundo Congreso Nacional de Investigación en Ciencias Básicas y Agronómicas", "Análisis de sensibilidad global para un modelo de crecimiento potencial de lechugas", "Ponencia", "México", 0],
+  [2011, "Congreso Internacional de Agricultura Controlada, Agua, Energía y Biodigestores", "Modelación matemática del ambiente invernadero", "Ponencia", "México", 0],
+  [2010, "1er Congreso Nacional de Ciencias Básicas y Agronómicas", "Algoritmos de evolución diferencial y colonia artificial de abejas en calibración de modelos de cultivos", "Artículo en extenso", "México", 0],
+  [2010, "28th International Horticultural Congress", "Neuro-fuzzy models for air temperature and humidity of a greenhouse", "Ponencia", "México", 0],
+  [2009, "10th Conference on Computing CORE 2009", "Boundary constraints strategies in differential evolution algorithms applied to optimal control problems", "Ponencia", "México", 0],
+  [2008, "ISHS International Workshop on Greenhouse Environmental Control and Crop Production in Semi-Arid Regions", "Simulation of greenhouse tomato crop transpiration by two theoretical models", "Ponencia", "Estados Unidos", 0],
+  [2008, "XVIII Congreso Nacional de Ingeniería Agrícola", "Predicción del crecimiento potencial de tomate de cáscara mediante los modelos LINTUL y SUCROS", "Artículo en extenso", "México", 0],
+  [2008, "Congreso Internacional PUIMECI", "Tasas de ventilación natural de un invernadero en el centro de México mediante dinámica de fluidos computacional y gases trazadores", "Artículo en extenso", "México", 0],
+  [2007, "GreenSys 2007: High Technology for Greenhouse System Management", "Modelling greenhouse climate using evolutionary algorithms", "Ponencia", "Italia", 0],
+  [2007, "XVII Congreso Nacional de Ingeniería Agrícola", "Modelos matemáticos para el control y manejo del ambiente invernadero", "Conferencia magistral", "México", 0],
+  [2007, "Seminario de Investigación PUIMECI", "Dinámica de fluidos computacional para modelar el clima del invernadero: estado del arte", "Ponencia", "México", 0],
+  [2007, "GreenSys 2007: High Technology for Greenhouse System Management", "A neural network model to predict temperature and humidity in a greenhouse", "Ponencia", "Italia", 0],
+  [2007, "GreenSys 2007: High Technology for Greenhouse System Management", "A system to monitoring temperature and humidity in greenhouses using a micronetwork", "Ponencia", "Italia", 0],
+  [2006, "IX Congreso Nacional Agronómico", "Modelación y simulación del desarrollo de cultivos mediante sistemas Lindenmayer", "Ponencia", "México", 0],
+  [2006, "Primer Congreso Nacional sobre Matemáticas y sus Aplicaciones", "Modelo dinámico de la temperatura y humedad de un invernadero: simulación y análisis de sensibilidad", "Ponencia", "México", 0],
+  [2006, "International Symposium on Greenhouse Cooling: Methods, Technologies and Plant Response", "Ventilation rates for a naturally-ventilated greenhouse in central Mexico", "Ponencia", "España", 0],
+  [2006, "II Seminario de Avances de Investigación PUIMECI", "Identificación de parámetros en modelos dinámicos no lineales mediante algoritmos de evolución diferencial", "Artículo en extenso", "México", 0],
+  [2006, "International Symposium on Models in Protected Cultivation", "A new sensitivity analysis methodology for greenhouse crop models", "Póster", "Países Bajos", 0],
+  [2006, "HortiModel 2006: International Symposium on Models in Protected Cultivation", "The effect of antitranspirant on growth and water uptake of sweet pepper plants: experiments and empirical modelling", "Ponencia", "Países Bajos", 0],
+  [2005, "VIII Congreso Nacional Agronómico", "Modelos ARX para la temperatura del aire de un invernadero", "Ponencia", "México", 0],
+  [2005, "4th Mexican International Conference on Artificial Intelligence", "Differential evolution algorithms to solve optimal control problems efficiently", "Póster", "México", 0],
+  [2005, "II Seminario de Avances de Investigación", "Modelo simplificado de crecimiento de tomate: simulación y análisis", "Artículo en extenso", "México", 0],
+  [2005, "II Seminario de Avances de Investigación", "Modelo simplificado de crecimiento de tomate: simulación y análisis", "Ponencia", "México", 0],
+  [2005, "Seminario de Optimización y Teoría de Juegos", "Control óptimo del clima del invernadero: avances y retos", "Artículo en extenso", "México", 0],
+  [2005, "Seminario de Optimización y Teoría de Juegos", "Control óptimo del clima del invernadero: avances y retos", "Ponencia", "México", 0],
+  [2004, "VII Congreso Nacional Agronómico", "Comparación de los ambientes de simulación FST/FSE y MATLAB/Simulink en modelos de crecimiento de cultivos", "Ponencia", "México", 0],
+  [2004, "III Congreso Internacional de Ingeniería Física", "Modelo dinámico de la temperatura en un invernadero mexicano", "Ponencia", "México", 0],
+  [2004, "I Congreso Latinoamericano y del Caribe de Ingeniería Agrícola", "Modelos dinámicos mecanicista y empírico para predicción de la temperatura en un invernadero mexicano", "Ponencia", "Costa Rica", 0],
+  [2004, "I Congreso Latinoamericano y del Caribe de Ingeniería Agrícola", "Modelos dinámicos mecanicista y empírico para predicción de la temperatura en un invernadero mexicano", "Artículo en extenso", "México", 0],
+  [2004, "XXXII Congreso Nacional de la Sociedad Mexicana de la Ciencia del Suelo", "Enfoques para modelar el clima del invernadero", "Conferencia magistral", "México", 0],
+  [2003, "Primer Simposio Regional de Producción de Cultivos en Invernaderos", "Control computarizado del ambiente de invernaderos", "Conferencia magistral", "México", 0],
+  [2003, "Simposio Binacional de Modelaje y Sensores Remotos en Agricultura México-USA", "Análisis de sensibilidad local variante en el tiempo de modelos de cultivos", "Póster", "México", 0],
+  [2003, "XII Congreso Nacional de Irrigación", "Estimación de parámetros de un modelo matemático de lechugas mediante algoritmos de evolución diferencial", "Ponencia", "México", 0],
+  [2003, "XII Congreso Nacional de Irrigación", "Estimación de parámetros de un modelo matemático de lechugas mediante algoritmos de evolución diferencial", "Artículo en extenso", "México", 0],
+  [2003, "Simposio Binacional de Modelaje y Sensores Remotos en Agricultura México-USA", "Análisis de sensibilidad local variante en el tiempo de modelos de cultivos", "Artículo en extenso", "México", 0],
+  [2001, "Artificial Intelligence in Agriculture 2001, IFAC-CIGR Workshop", "Optimal control of nitrate in lettuce by gradient and differential evolution algorithms", "Ponencia", "Hungría", 0],
+  [2001, "IASTED International Conference Artificial Intelligence and Soft Computing (ASC 2001)", "Parameter control strategy in differential evolution algorithm for optimal control", "Ponencia", "México", 0],
+  [2000, "IASTED International Conference Control and Applications", "Evolutionary algorithms for optimal control of chemical processes", "Ponencia", "México", 0],
+  [1999, "Third International Symposium IMACS/IFAC on Mathematical Modelling and Simulation in Agricultural and Bio-industries", "Calibration of a dynamic lettuce model for greenhouse climate control using genetic algorithms", "Ponencia", "Suecia", 0],
+  [1999, "18th Benelux Meeting on Systems and Control", "Calibration of a dynamic lettuce model for greenhouse climate control using genetic algorithms", "Ponencia", "Bélgica", 0],
+  [1999, "19th Benelux Meeting on Systems and Control", "Evolutionary algorithms for dynamic optimization", "Ponencia", "Países Bajos", 0],
+  [1996, "6th International Conference on Computers in Agriculture", "Greenhouse climate control by evolutionary programs: genetic algorithms and evolutionary programs", "Ponencia", "México", 0]
+];
+
+// [fecha, convocatoria, descripción]
+const EVALUACIONES = [
+  ["Dic 2023", "Fondo Ciencia de Frontera", "Evaluación del informe final del proyecto 320715 \"Modelo predictivo como estrategia de control de la gallina ciega (Phyllophaga spp.) con base en información climática y del micro-hábitat en el suelo en sistemas de mono- y policultivos de maíz nativo en Oaxaca\"."],
+  ["Mar 2023", "Fondo Ciencia de Frontera — Paradigmas y Controversias de la Ciencia 2022", "Evaluación del informe parcial del proyecto 320715."],
+  ["Ene 2022", "Fondo Ciencia de Frontera — Paradigmas y Controversias de la Ciencia 2022", "Evaluación de la propuesta 320332 \"Desarrollo de un sistema piloto integral para la optimización en el manejo de la agricultura de riego en México implementando tecnologías de monitoreo en tiempo real: caso de aplicación en una zona semiárida\"."],
+  ["Ene 2022", "Fondo FOP16, convocatoria FOP16-2021-01", "Evaluación del proyecto 320715 sobre el control de la gallina ciega en maíz nativo en Oaxaca."],
+  ["Abr 2021", "Fondo FOP08, convocatoria FOP08-2021-01 (Estrategia tecnológica)", "Evaluación del proyecto 316149 \"Tecnología de agricultura de precisión orientada a la reducción del uso de agroquímicos en unidades de producción mayores a 5 ha para una transición a manejo agroecológico\"."],
+  ["Oct 2020", "Cátedras CONACyT", "Evaluación trienal del avance de proyectos y del desempeño de investigadores catedráticos."],
+  ["Ago 2020", "Estancias Posdoctorales por México 2020 — 1er corte", "Integrante de comité de pares académicos para la asignación de apoyos."],
+  ["Mar 2020", "Cátedras CONACyT 2014", "Evaluación del proyecto 1426 \"Modelación y simulación matemática para el manejo sustentable de los cultivos en invernadero\" de la Universidad Autónoma Agraria Antonio Narro."],
+  ["May 2019", "Becas al extranjero Convenios DAAD 2019-1", "Integrante del comité de evaluación de solicitudes."]
+];
+
+// ================= CONSTRUCCIÓN DE LA PÁGINA =================
+const $ = id => document.getElementById(id);
+const esc = t => String(t).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm = t => String(t).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+$("lineas").innerHTML = LINEAS.map(l => `<li>${esc(l)}</li>`).join("");
+$("habilidades").innerHTML = HABILIDADES.map(([h, n]) => `<span class="etiqueta">${esc(h)} · <b>${esc(n)}</b></span>`).join("");
+
+$("formacionGrid").innerHTML = FORMACION.map(([g, i, n]) =>
+  `<div class="tarjeta"><h3>${esc(g)}</h3><div class="meta">${esc(n)}</div><p>${esc(i)}</p></div>`).join("");
+
+$("estanciasGrid").innerHTML = ESTANCIAS.map(([i, t, p, l]) =>
+  `<div class="tarjeta"><h3>${esc(i)}</h3><div class="meta">${esc(t)} · ${esc(p)}</div><p>${esc(l)}</p></div>`).join("");
+
+$("linea").innerHTML = CRONOLOGIA.map(([a, t, d]) =>
+  `<div class="evento"><div class="anio-ev">${a}</div><div class="evento-card"><h4>${esc(t)}</h4><p>${esc(d)}</p></div></div>`).join("");
+
+$("listaDistinciones").innerHTML = DISTINCIONES.map(([a, d, i, x]) =>
+  `<li><span class="pill">${a}</span><b>${esc(d)}</b> — ${esc(i)}${x ? `<small>${esc(x)}</small>` : ""}</li>`).join("");
+
+$("listaEvaluaciones").innerHTML = EVALUACIONES.map(([f, c, d]) =>
+  `<li><span class="pill">${f}</span><b>${esc(c)}</b><small>${esc(d)}</small></li>`).join("");
+
+// Congresos: filtros por tipo, búsqueda y agrupación por año
+const TIPOS = [...new Set(CONGRESOS.map(c => c[3]))];
+const nDest = CONGRESOS.filter(c => c[5]).length;
+const botones = [["", `Todas (${CONGRESOS.length})`], ...TIPOS.map(t => [t, `${t} (${CONGRESOS.filter(c => c[3] === t).length})`]), ["*", `Destacadas (${nDest})`]];
+$("filtros").innerHTML = botones.map(([k, txt], i) =>
+  `<button type="button" class="chip${i === 0 ? " activo" : ""}" data-tipo="${esc(k)}" aria-pressed="${i === 0}">${esc(txt)}</button>`).join("");
+
+const anios = [...new Set(CONGRESOS.map(c => c[0]))];
+$("congresosLista").innerHTML = anios.map(y => `
+  <div class="anio-grupo">
+    <h3 class="anio">${y}</h3>
+    <ul class="lista-congresos">${CONGRESOS.filter(c => c[0] === y).map(([a, ev, tr, tp, pa, d]) => `
+      <li class="congreso" data-tipo="${esc(tp)}" data-dest="${d}" data-q="${esc(norm([a, ev, tr, tp, pa].join(" ")))}">
+        <b>${esc(ev)}${d ? ' <span class="dest">Destacado</span>' : ""}</b>
+        <span class="trabajo">${esc(tr)}</span>
+        <span class="meta">${esc(tp)} · ${esc(pa)}</span>
+      </li>`).join("")}
+    </ul>
+  </div>`).join("");
+
+const items = [...document.querySelectorAll(".congreso")];
+const grupos = [...document.querySelectorAll(".anio-grupo")];
+let tipo = "";
+function aplicar() {
+  const q = norm($("buscar").value.trim());
+  let n = 0;
+  items.forEach(li => {
+    const okTipo = !tipo || (tipo === "*" ? li.dataset.dest === "1" : li.dataset.tipo === tipo);
+    const ok = okTipo && (!q || li.dataset.q.includes(q));
+    li.hidden = !ok; if (ok) n++;
+  });
+  grupos.forEach(g => g.hidden = !g.querySelector(".congreso:not([hidden])"));
+  $("conteo").textContent = `${n} de ${items.length} participaciones`;
+  $("vacio").hidden = n > 0;
+}
+$("filtros").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  $("filtros").querySelectorAll(".chip").forEach(x => { x.classList.remove("activo"); x.setAttribute("aria-pressed", "false"); });
+  b.classList.add("activo"); b.setAttribute("aria-pressed", "true");
+  tipo = b.dataset.tipo; aplicar();
+});
+$("buscar").addEventListener("input", aplicar);
+aplicar();
+
+// Menú móvil
+$("navToggle").addEventListener("click", () => $("navToggle").setAttribute("aria-expanded", $("navLinks").classList.toggle("open")));
+</script>
+</body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publicaciones | Irineo L. López Cruz</title>
+<meta name="description" content="Perfil académico de Irineo Lorenzo López Cruz — Universidad Autónoma Chapingo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/publicaciones.css">
+</head>
+<style>
+  /* ===== PUBLICACIONES ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px;}
+.tarjeta{background:var(--surface);border:1px solid var(--borde);border-radius:var(--radio);padding:26px;transition:.25s;position:relative;display:flex;flex-direction:column;}
+.tarjeta:hover{transform:translateY(-5px);box-shadow:var(--sombra);border-color:rgba(14,122,82,.35);}
+.tarjeta h3{color:var(--texto);font-size:1rem;margin:12px 0 8px;line-height:1.45;font-weight:700;}
+.tarjeta .meta{font-size:.78rem;color:var(--verde);margin-bottom:10px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;}
+.tarjeta p{font-size:.87rem;color:var(--gris);font-style:italic;}
+.tarjeta .tag{align-self:flex-start;}
+ :root{
+  --bg:#fafbfa;
+  --surface:#ffffff;
+  --surface-2:#f2f5f3;
+  --texto:#1a2420;
+  --gris:#5c6b64;
+  --verde:#0e7a52;
+  --verde-osc:#0a5c3e;
+  --verde-claro:#e6f4ee;
+  --acento:#b8860b;
+  --borde:#e2e8e4;
+  --sombra:0 2px 8px rgba(16,42,32,.06),0 12px 32px rgba(16,42,32,.07);
+  --radio:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--texto);line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.brand{font-family:'Sora',sans-serif;letter-spacing:-.02em;}
+a{color:var(--verde);transition:color .2s;}
+a:hover{color:var(--verde-osc);}
+img{max-width:100%;display:block;}
+.contenedor{max-width:1120px;margin:0 auto;padding:0 24px;}
+.contenedor-narrow{max-width:780px;}
+
+/* ===== NAVBAR ===== */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--borde);}
+.nav-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.brand{font-weight:800;font-size:1.06rem;color:var(--texto);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.brand:hover{color:var(--texto);}
+.brand-dot{width:11px;height:11px;border-radius:3px;background:linear-gradient(135deg,var(--verde),#2ea87c);flex-shrink:0;}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-link{color:var(--gris);text-decoration:none;font-size:.9rem;font-weight:600;padding:9px 18px;border-radius:8px;transition:.2s;}
+.nav-link:hover{color:var(--texto);background:var(--surface-2);}
+.nav-link.active{color:#fff;background:var(--verde);}
+.nav-link.active:hover{color:#fff;background:var(--verde-osc);}
+.nav-toggle{display:none;background:none;border:1px solid var(--borde);color:var(--texto);font-size:1.15rem;border-radius:8px;padding:5px 12px;cursor:pointer;}
+
+/* ===== BOTONES ===== */
+.btn{display:inline-block;font-weight:600;font-size:.93rem;text-decoration:none;padding:13px 30px;border-radius:10px;cursor:pointer;transition:.22s;border:1px solid transparent;}
+.btn-primary{color:#fff;background:var(--verde);}
+.btn-primary:hover{color:#fff;background:var(--verde-osc);transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,122,82,.25);}
+.btn-ghost{color:var(--texto);border-color:var(--borde);background:var(--surface);}
+.btn-ghost:hover{color:var(--verde);border-color:var(--verde);transform:translateY(-2px);}
+
+/* ===== ENCABEZADO DE PÁGINAS INTERNAS ===== */
+.page-hero{background:linear-gradient(160deg,var(--verde-osc) 0%,var(--verde) 100%);padding:88px 24px 64px;text-align:center;position:relative;overflow:hidden;}
+.page-hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 10%,rgba(255,255,255,.10),transparent 60%);}
+.page-hero .contenedor{position:relative;z-index:1;}
+.page-hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff;}
+.page-sub{color:rgba(255,255,255,.82);max-width:720px;margin:14px auto 0;font-size:1.02rem;}
+
+/* ===== PANEL ===== */
+.panel{background:var(--surface);border:1px solid var(--borde);border-radius:var(--radio);padding:32px;box-shadow:var(--sombra);}
+.panel p{margin-bottom:14px;color:#33413b;text-align:justify;}
+.panel p:last-child{margin-bottom:0;}
+.panel b{color:var(--texto);}
+
+/* ===== CTA ===== */
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px;}
+
+/* ===== FOOTER ===== */
+.footer{border-top:1px solid var(--borde);background:var(--surface-2);padding:34px 0;text-align:center;color:var(--gris);font-size:.88rem;}
+.footer a{color:var(--verde);text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+.footer p{margin-bottom:4px;}
+
+/* ===== ANIMACIÓN REVEAL ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+
+/* ===== LISTA COMPLETA DE ARTÍCULOS ===== */
+.lista-intro{color:var(--gris);margin:-4px 0 20px;}
+.buscador{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:28px;}
+.buscador label{width:100%;font-size:.85rem;font-weight:600;color:var(--texto);}
+.buscador input{flex:1 1 280px;font:inherit;font-size:.95rem;padding:11px 14px;border:1px solid var(--borde);border-radius:10px;background:var(--surface);color:var(--texto);}
+.buscador input:focus{outline:2px solid var(--verde);outline-offset:1px;border-color:var(--verde);}
+#conteoPub{font-size:.85rem;color:var(--gris);}
+.sin-resultados{color:var(--gris);font-style:italic;}
+.anio-grupo{display:grid;grid-template-columns:88px 1fr;gap:0 24px;border-top:1px solid var(--borde);padding:22px 0;}
+.anio{font-size:1.5rem;color:var(--verde);line-height:1.2;position:sticky;top:76px;align-self:start;}
+.lista-pub{list-style:none;display:flex;flex-direction:column;gap:18px;}
+.pub-titulo{font-weight:600;color:var(--texto);line-height:1.45;}
+.pub-titulo a{color:var(--texto);text-decoration:none;}
+.pub-titulo a:hover{color:var(--verde);text-decoration:underline;}
+.pub-titulo a::after{content:" ↗";font-size:.8em;color:var(--verde);}
+.pub-autores{font-size:.87rem;color:var(--gris);}
+.pub-meta{font-size:.85rem;color:var(--verde-osc);}
+.mini-dest{display:inline-block;vertical-align:middle;font-size:.7rem;font-weight:700;color:var(--acento);border:1px solid var(--acento);border-radius:999px;padding:1px 8px;margin-left:6px;}
+@media(max-width:600px){.anio-grupo{grid-template-columns:1fr;}.anio{position:static;margin-bottom:10px;font-size:1.25rem;}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:760px){
+  .nav-toggle{display:block;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--borde);padding:12px 24px;gap:4px;box-shadow:var(--sombra);}
+  .nav-links.open{display:flex;}
+  .nav-link{text-align:center;}
+}
+</style>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Irineo L. López Cruz</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="publicaciones.html" class="nav-link active">Publicaciones</a>
+      <a href="docencia.html" class="nav-link">Docencia</a>
+      <a href="trayectoria.html" class="nav-link">Trayectoria</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="contenedor reveal">
+    <h1>Publicaciones</h1>
+    <p class="page-sub">Artículos científicos y capítulos de libro — CVU 121196</p>
+  </div>
+</header>
+
+<section class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo reveal">Artículos destacados</h2>
+    <div class="grid">
+      <article class="tarjeta reveal">
+        <span class="tag dest">Producto destacado</span>
+        <h3>HORTSYST: a dynamic model to predict growth, nitrogen uptake, and transpiration of greenhouse tomatoes</h3>
+        <div class="meta">Chilean Journal of Agricultural Research · 2019 · Coautor</div>
+        <p>Martínez-Ruiz, A., López-Cruz, I.L., Ruiz-García, A., Pineda-Pineda, J., Prado-Hernández, J.V.</p>
+      </article>
+      <article class="tarjeta reveal">
+        <span class="tag dest">Producto destacado</span>
+        <h3>Development and analysis of dynamical mathematical models of greenhouse climate: a review</h3>
+        <div class="meta">European Journal of Horticultural Science · 2018 · Autor principal</div>
+        <p>López-Cruz, I., Fitz-Rodríguez, E., Salazar-Moreno, R., Rojano-Aguilar, A., Kacira, M.</p>
+      </article>
+      <article class="tarjeta reveal">
+        <span class="tag dest">Producto destacado</span>
+        <h3>Efficient differential evolution algorithms for multimodal optimal control problems</h3>
+        <div class="meta">Applied Soft Computing · 2003 · Autor de correspondencia</div>
+        <p>López-Cruz, I., van Willigenburg, L.G., van Straten, G.</p>
+      </article>
+      <article class="tarjeta reveal">
+        <span class="tag dest">Producto destacado</span>
+        <h3>Optimal control of nitrate in lettuce by a hybrid approach: differential evolution and adjustable control weight gradient algorithms</h3>
+        <div class="meta">Computers and Electronics in Agriculture · 2003 · Autor principal</div>
+        <p>López-Cruz, I., van Willigenburg, L.G., van Straten, G.</p>
+      </article>
+      <article class="tarjeta reveal">
+        <span class="tag dest">Producto destacado</span>
+        <h3>Global sensitivity analysis by means of eFAST and Sobol' methods and calibration of reduced state-variable TOMGRO model using genetic algorithms</h3>
+        <div class="meta">Computers and Electronics in Agriculture · 2014 · Coautor</div>
+        <p>Vázquez-Cruz, M.A., Guzmán-Cruz, R., López-Cruz, I.L., et al.</p>
+      </article>
+      <article class="tarjeta reveal">
+        <span class="tag dest">Producto destacado</span>
+        <h3>Parameter estimation for crop growth model using evolutionary and bio-inspired algorithms</h3>
+        <div class="meta">Applied Soft Computing · 2014 · Autor de correspondencia</div>
+        <p>Trejo-Zúñiga, E.C., López-Cruz, I.L., Ruiz-García, A.</p>
+      </article>
+      <article class="tarjeta reveal">
+        <span class="tag dest">Producto destacado</span>
+        <h3>Modelos neurodifusos para temperatura y humedad del aire en invernaderos tipo cenital y capilla en el centro de México</h3>
+        <div class="meta">Agrociencia · 2010 · Autor principal</div>
+        <p>López-Cruz, I.L., Hernández-Larragoiti, L.</p>
+      </article>
+      <article class="tarjeta reveal">
+        <span class="tag dest">Producto destacado</span>
+        <h3>Calibration of a greenhouse climate model using evolutionary algorithms</h3>
+        <div class="meta">Biosystems Engineering · 2009 · Coautor</div>
+        <p>Guzmán-Cruz, R., Castañeda-Miranda, R., García-Escalante, J.J., López-Cruz, I.L., Lara-Herrera, A.</p>
+      </article>
+      <article class="tarjeta reveal">
+        <span class="tag dest">Producto destacado</span>
+        <h3>Modelos matemáticos de hortalizas en invernadero: trascendiendo la contemplación de la dinámica de cultivos</h3>
+        <div class="meta">Revista Chapingo Serie Horticultura · 2005 · Autor principal</div>
+        <p>López-Cruz, I.L., Ramírez-Arias, A., Rojano-Aguilar, A.</p>
+      </article>
+    </div>
+    <div class="panel reveal" style="margin-top:28px;">
+      <p>Entre sus publicaciones recientes destacan artículos en <i>Biosystems Engineering</i> (2019), <i>Remote Sensing</i> (2022), <i>Agronomy</i> (2022), <i>Spanish Journal of Agricultural Research</i> (2021) e <i>Applied Thermal Engineering</i> (2017). La lista completa de artículos está <a href="#todos">más abajo</a>; también puede consultar el perfil en Google Scholar.</p>
+      <a class="btn btn-primary" target="_blank" href="https://scholar.google.com/citations?hl=es&user=7SDLNWGAAAAJ">Google Scholar</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="seccion" id="todos">
+  <div class="contenedor">
+    <h2 class="titulo">Todos los artículos</h2>
+    <p class="lista-intro">56 artículos científicos registrados en el CVU, del más reciente al más antiguo.</p>
+    <div class="buscador">
+      <label for="filtroPub">Buscar por título, revista, autor o año</label>
+      <input type="search" id="filtroPub" placeholder="Ej. invernadero, Agrociencia, 2017…" autocomplete="off">
+      <span id="conteoPub" aria-live="polite">56 de 56 artículos</span>
+    </div>
+    <p id="sinResultados" class="sin-resultados" hidden>Ningún artículo coincide con la búsqueda. Prueba con otra palabra.</p>
+
+    <div class="anio-grupo">
+      <h3 class="anio">2023</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.47163/agrociencia.v57i2.2505" target="_blank" rel="noopener">Estimation of the genetic coefficients of the CERES-Maize model for the simulation of yield by non-destructive methods</a></p>
+          <p class="pub-autores">Noriega-Navarrete, J.L., Salazar-Moreno, R., Burgueño-Ferreira, J.A., López-Cruz, I.L., Petroli, C.D.</p>
+          <p class="pub-meta"><i>Agrociencia</i>, 2023. Coautor.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2022</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://www.mdpi.com/2073-4395/12/8/1813" target="_blank" rel="noopener">Spatiotemporal uncertainty and sensitivity analysis of the SIMPLE model applied to common beans for semi-arid climate of Mexico</a></p>
+          <p class="pub-autores">Servín-Palestina, M., López-Cruz, I.L., Zegbe-Domínguez, J.A., Ruiz-García, A., Salazar-Moreno, R., Medina-García, G.</p>
+          <p class="pub-meta"><i>Agronomy</i>, 2022. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.18633/biotecnia.v24i2.1664" target="_blank" rel="noopener">Predicción de la producción y rendimiento de frijol, con modelos de redes neuronales artificiales y datos climáticos</a></p>
+          <p class="pub-autores">Servín-Palestina, M., Salazar-Moreno, R., López-Cruz, I.L., Medina-García, G., Cid-Ríos, J.A.</p>
+          <p class="pub-meta"><i>Biotecnia</i>, 2022. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.3390/rs14194892" target="_blank" rel="noopener">Detection and counting of corn plants in the presence of weeds with convolutional neural networks</a></p>
+          <p class="pub-autores">Mota-Delfín, C., López-Canteñs, G.J., López-Cruz, I.L., Romantchik-Kriuchkova, E., Olguín-Rojas, J.C.</p>
+          <p class="pub-meta"><i>Remote Sensing</i>, 2022. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">La modelación y simulación matemáticas: una herramienta para la protección de cultivos</p>
+          <p class="pub-autores">Durán-Peralta, E., Acuayte-Valdés, E., Acuayte-Valdés, M.C., Hernández-López, J.C., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Revista Mexicana de Ciencias Agrícolas</i>, 2022. Autor de correspondencia.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2021</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Apropiación del espacio con agricultura: un estudio de aprendizaje asociativo mediante un modelo de simulación basado en agentes</p>
+          <p class="pub-autores">Vélez-Torres, A., Valdez-Zepeda, R.D., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Papers. Revista de Sociología</i>, 2021. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Revisión: modelos de crecimiento y rendimiento de maíz en escenarios de cambio climático</p>
+          <p class="pub-autores">Noriega-Navarrete, J.L., Salazar-Moreno, R., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Revista Mexicana de Ciencias Agrícolas</i>, 2021. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Modelo de simulación basado en agentes para la apropiación del espacio en un huerto escolar</p>
+          <p class="pub-autores">Vélez-Torres, A., Lara-Lara, A.P., Valdez-Cepeda, R.D., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Innovación y Desarrollo Tecnológico Revista Digital</i>, 2021. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.5424/sjar/2021193-17842" target="_blank" rel="noopener">Uncertainty analysis of the HORTSYST model applied to fertigated tomatoes cultivated in a hydroponic greenhouse system</a></p>
+          <p class="pub-autores">Martínez-Ruiz, A., López-Cruz, I.L., Ruiz-García, A., Pineda-Pineda, J., Sánchez-García, P., Mendoza-Pérez, C.</p>
+          <p class="pub-meta"><i>Spanish Journal of Agricultural Research</i>, 2021. Autor de correspondencia.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2020</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.5154/r.inagbi.2020.10.060" target="_blank" rel="noopener">3D computational fluid dynamics modeling of temperature and humidity in a humidified greenhouse</a></p>
+          <p class="pub-autores">Pérez-Vega, C., Ramírez-Arias, J.A., López-Cruz, I.L., Arteaga-Ramírez, R., Cervantes-Osornio, R.</p>
+          <p class="pub-meta"><i>Ingeniería Agrícola y Biosistemas</i>, 2020. Autor de correspondencia.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2019</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.5154/r.rchsh.2018.07.014" target="_blank" rel="noopener">Dynamic energy balance model in a greenhouse with tomato cultivation: simulation, calibration and evaluation</a></p>
+          <p class="pub-autores">Salazar-Moreno, R., López-Cruz, I.L., Sánchez-Cruz, A.C.</p>
+          <p class="pub-meta"><i>Revista Chapingo Serie Horticultura</i>, 2019. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.4067/S0718-58392019000100089" target="_blank" rel="noopener">HORTSYST: a dynamic model to predict growth, nitrogen uptake, and transpiration of greenhouse tomatoes</a> <span class="mini-dest">Destacado</span></p>
+          <p class="pub-autores">Martínez-Ruiz, A., López-Cruz, I.L., Ruiz-García, A., Pineda-Pineda, J., Prado-Hernández, J.V.</p>
+          <p class="pub-meta"><i>Chilean Journal of Agricultural Research</i>, 2019. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.1016/j.biosystemseng.2019.03.001" target="_blank" rel="noopener">Improving climate monitoring in greenhouse cultivation via model based filtering</a></p>
+          <p class="pub-autores">van Mourik, S., van Beveren, P.J.M., López-Cruz, I.L., van Henten, E.J.</p>
+          <p class="pub-meta"><i>Biosystems Engineering</i>, 2019. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.22201/fi.25940732e.2019.20n2.016" target="_blank" rel="noopener">Mathematical modelling of the thin layer drying of pineapple (Ananas comosus L.): experiment at village-scale in a greenhouse type solar dryer</a></p>
+          <p class="pub-autores">López-Cerino, I., López-Cruz, I.L., Janjai, S., Nagle, M., Mahayothee, B., Müller, J.</p>
+          <p class="pub-meta"><i>Ingeniería Investigación y Tecnología</i>, 2019. Autor de correspondencia.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2018</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.22201/fi.25940732e.2018.19n3.028" target="_blank" rel="noopener">Thin layer drying of pineapple (Ananas comosus L.)</a></p>
+          <p class="pub-autores">López-Cerino, I., López-Cruz, I.L., Nagle, M., Mahayothee, B., Müller, J.</p>
+          <p class="pub-meta"><i>Ingeniería Investigación y Tecnología</i>, 2018. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.17660/eJHS.2018/83.5.1" target="_blank" rel="noopener">Development and analysis of dynamical mathematical models of greenhouse climate: a review</a> <span class="mini-dest">Destacado</span></p>
+          <p class="pub-autores">López-Cruz, I.L., Fitz-Rodríguez, E., Salazar-Moreno, R., Rojano-Aguilar, A., Kacira, M.</p>
+          <p class="pub-meta"><i>European Journal of Horticultural Science</i>, 2018. Autor principal.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2017</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Determination of energy to be supplied by photovoltaic systems for fan-pad systems in cooling process of greenhouses</p>
+          <p class="pub-autores">Sánchez, E., Romantchik, E., Ríos, E., Sánchez, J.R., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Applied Thermal Engineering</i>, 2017. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.17660/ActaHortic.2017.1154.5" target="_blank" rel="noopener">Recent developments and challenges in crop growth modelling: uncertainty analysis, global sensitivity analysis and data assimilation</a></p>
+          <p class="pub-autores">López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 2017. Autor principal.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.5154/r.inagbi.2017.02.004" target="_blank" rel="noopener">Mathematical modeling of greenhouse solar dryers with natural and forced convection for agricultural products: state of the art</a></p>
+          <p class="pub-autores">Garduño-García, A., López-Cruz, I.L., Ruiz-García, A.</p>
+          <p class="pub-meta"><i>Ingeniería Agrícola y Biosistemas</i>, 2017. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.17660/ActaHortic.2017.1170.20" target="_blank" rel="noopener">Performance of extended and unscented Kalman filters for state and parameter estimation of a greenhouse climate model</a></p>
+          <p class="pub-autores">van Beveren, P.J.M., López-Cruz, I.L., van Henten, E.J., van Mourik, S.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 2017. Autor principal.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.17660/ActaHortic.2017.1170.21" target="_blank" rel="noopener">A physical model for water balance in a semi-closed greenhouse</a></p>
+          <p class="pub-autores">Mauricio-Pérez, A.M., Schmidt, U., Miranda, L., Salazar-Moreno, R., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 2017. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.17660/ActaHortic.2017.1170.74" target="_blank" rel="noopener">PD+ controller tuning with the cuckoo search algorithm for a leaf cutter robot</a></p>
+          <p class="pub-autores">López-Cruz, I.L., Cebada-Reyes, J.G., Sánchez-Sánchez, P., Romantchik-Kriuchkova, E., Hahn-Schlam, F.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 2017. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.17660/ActaHortic.2017.1170.53" target="_blank" rel="noopener">Data assimilation to improve states estimation of a dynamic greenhouse tomatoes crop growth model</a></p>
+          <p class="pub-autores">Torres-Monsivais, J.C., Ruiz-García, A., Peña-Moreno, R.D., López-Cruz, I.L., Ramírez-Arias, J.A.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 2017. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.17660/ActaHortic.2017.1170.27" target="_blank" rel="noopener">The effects of model reduction and data assimilation on greenhouse climate predictions</a></p>
+          <p class="pub-autores">van Beveren, P.J.M., van Henten, E.J., van Mourik, S., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 2017. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.1111/jfpe.12653" target="_blank" rel="noopener">Thermal convection coefficient in cooling process of lime fruit: study through the Galerkin finite element method</a></p>
+          <p class="pub-autores">Cruz-Pérez, D., Valle-Guadarrama, S., López-Cruz, I.L., Hahn-Schlam, F.</p>
+          <p class="pub-meta"><i>Journal of Food Process Engineering</i>, 2017. Coautor.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2016</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Características aerodinámicas de mallas anti-insectos usadas en ventanas de invernaderos en México</p>
+          <p class="pub-autores">Pérez-Vega, C., Ramírez-Arias, J.A., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Revista Mexicana de Ciencias Agrícolas</i>, 2016. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.5154/r.rchsh.2015.06.011" target="_blank" rel="noopener">Modelo de humedad en un invernadero semicerrado</a></p>
+          <p class="pub-autores">Mauricio-Pérez, A.M., Salazar-Moreno, R., López-Cruz, I.L., Rojano-Aguilar, A.</p>
+          <p class="pub-meta"><i>Revista Chapingo Serie Horticultura</i>, 2016. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.5154/r.inagbi.2015.12.009" target="_blank" rel="noopener">Pressure drop in macroporous medium with forced air: calibration of the Ergun equation</a></p>
+          <p class="pub-autores">López-Cruz, I.L., Cruz-Pérez, D., Valle-Guadarrama, S.</p>
+          <p class="pub-meta"><i>Ingeniería Agrícola y Biosistemas</i>, 2016. Coautor.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2015</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://agrociencia-colpos.org/index.php/agrociencia/article/view/1132" target="_blank" rel="noopener">Tasas de ventilación natural de un invernadero del centro de México estimadas mediante balance de energía</a></p>
+          <p class="pub-autores">Ruiz-García, A., López-Cruz, I.L., Arteaga-Ramírez, R., Ramírez-Arias, J.A.</p>
+          <p class="pub-meta"><i>Agrociencia</i>, 2015. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://agrociencia-colpos.org/index.php/agrociencia/article/view/1143" target="_blank" rel="noopener">Determinación de los gradientes térmicos nocturnos en un invernadero usando dinámica de fluidos computacional</a></p>
+          <p class="pub-autores">Espinal-Montes, V., López-Cruz, I.L., Rojano-Aguilar, A., Romantchik-Kriuchkova, E., Ramírez-Arias, A.</p>
+          <p class="pub-meta"><i>Agrociencia</i>, 2015. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.17660/ActaHortic.2015.1107.1" target="_blank" rel="noopener">Tomato yield prediction in a semi-closed greenhouse</a></p>
+          <p class="pub-autores">López-Cruz, I.L., Rojano-Aguilar, A., Salazar-Moreno, R., Schmidt, U., Dannehl, D.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 2015. Coautor.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2014</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.1016/j.compag.2013.10.006" target="_blank" rel="noopener">Global sensitivity analysis by means of eFAST and Sobol&#x27; methods and calibration of reduced state-variable TOMGRO model using genetic algorithms</a> <span class="mini-dest">Destacado</span></p>
+          <p class="pub-autores">Vázquez-Cruz, M.A., Guzmán-Cruz, R., López-Cruz, I.L., Cornejo-Pérez, O., Torres-Pacheco, I., Guevara-González, R.G.</p>
+          <p class="pub-meta"><i>Computers and Electronics in Agriculture</i>, 2014. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Simulación del proceso de fermentación de cerveza artesanal</p>
+          <p class="pub-autores">López-Cruz, I.L., Ruiz-García, A., Garduño-García, A., Martínez-Romero, S.</p>
+          <p class="pub-meta"><i>Ingeniería Investigación y Tecnología</i>, 2014. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Evaluación del desempeño climático de un invernadero baticenital del centro de México mediante dinámica de fluidos computacional (CFD)</p>
+          <p class="pub-autores">Flores-Velázquez, J., López-Cruz, I.L., Montero-Camacho, J.I., Mejía-Sáenz, E.</p>
+          <p class="pub-meta"><i>Agrociencia</i>, 2014. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Neuro-fuzzy modeling of transpiration rates of greenhouse tomatoes under temperate weather conditions of central Mexico</p>
+          <p class="pub-autores">Hernández-Larragoiti, L., López-Cruz, I.L., Ruiz-García, A.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 2014. Autor principal.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Modeling uncertainty of greenhouse lettuce growth model using Kalman filtering</p>
+          <p class="pub-autores">Ramírez-Arias, A., Rico-García, E., Ruiz-García, A., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 2014. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.1016/j.biortech.2014.06.008" target="_blank" rel="noopener">Application of Anaerobic Digestion Model No. 1 to describe the syntrophic acetate oxidation of poultry litter in thermophilic anaerobic digestion</a></p>
+          <p class="pub-autores">Rivera-Salvador, V., Toledo, J.U., López-Cruz, I.L., Espinosa-Solares, T., Aranda-Barradas, J.S., Sharma, D., Huber, D.H.</p>
+          <p class="pub-meta"><i>Bioresource Technology</i>, 2014. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.1016/j.asoc.2014.06.023" target="_blank" rel="noopener">Parameter estimation for crop growth model using evolutionary and bio-inspired algorithms</a> <span class="mini-dest">Destacado</span></p>
+          <p class="pub-autores">Trejo-Zúñiga, E.C., López-Cruz, I.L., Ruiz-García, A.</p>
+          <p class="pub-meta"><i>Applied Soft Computing</i>, 2014. Autor de correspondencia.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Análisis de sensibilidad global del modelo de cultivos SUCROS aplicado a tomate de cáscara</p>
+          <p class="pub-autores">López-Cruz, I.L., Rojano-Aguilar, A., Salazar-Moreno, R., López-López, R.</p>
+          <p class="pub-meta"><i>Revista Fitotecnia Mexicana</i>, 2014. Autor principal.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Simulation of energy harvesting in a semiclosed greenhouse</p>
+          <p class="pub-autores">Salazar-Moreno, R., Schmidt, U., Miranda, L., Rojano-Aguilar, A., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 2014. Coautor.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2013</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Análisis de incertidumbre de un modelo para lechugas (Lactuca sativa L.) cultivadas en invernadero</p>
+          <p class="pub-autores">López-Cruz, I.L., Ruiz-García, A., Ramírez-Arias, A., Vázquez-Peña, M.A.</p>
+          <p class="pub-meta"><i>Revista Chapingo Serie Horticultura</i>, 2013. Autor principal.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Estimación de parámetros para un modelo de crecimiento de cultivos usando algoritmos evolutivos y bio-inspirados</p>
+          <p class="pub-autores">Trejo-Zúñiga, E.C., López-Cruz, I.L., Ruiz-García, A.</p>
+          <p class="pub-meta"><i>Agrociencia</i>, 2013. Autor de correspondencia.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2012</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Análisis de sensibilidad global de un modelo de lechugas (Lactuca sativa L.) cultivadas en invernadero</p>
+          <p class="pub-autores">López-Cruz, I.L., Salazar-Moreno, R., Rojano-Aguilar, A., Ruiz-García, A.</p>
+          <p class="pub-meta"><i>Agrociencia</i>, 2012. Autor principal.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2011</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Simulación del crecimiento y desarrollo del chile pimiento (Capsicum annuum L.) bajo condiciones de invernadero</p>
+          <p class="pub-autores">Hernández-Hernández, F., López-Cruz, I.L., Guevara-González, R.G., Rico-García, E., Campos-Velásquez, V.R., Herrera-Ruiz, G., González-Chavira, M.M., Torres-Pacheco, I.</p>
+          <p class="pub-meta"><i>Revista Mexicana de Ciencias Agrícolas</i>, 2011. Coautor.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2010</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Enhancement of the greenhouse air ventilation rate under climate conditions in central Mexico</p>
+          <p class="pub-autores">Romero-Gómez, P., Choi, C.Y., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Agrociencia</i>, 2010. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Modelos neurodifusos para temperatura y humedad del aire en invernaderos tipo cenital y capilla en el centro de México <span class="mini-dest">Destacado</span></p>
+          <p class="pub-autores">López-Cruz, I.L., Hernández-Larragoiti, L.</p>
+          <p class="pub-meta"><i>Agrociencia</i>, 2010. Autor principal.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2009</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.1016/j.biosystemseng.2009.06.006" target="_blank" rel="noopener">Calibration of a greenhouse climate model using evolutionary algorithms</a> <span class="mini-dest">Destacado</span></p>
+          <p class="pub-autores">Guzmán-Cruz, R., Castañeda-Miranda, R., García-Escalante, J.J., López-Cruz, I.L., Lara-Herrera, A.</p>
+          <p class="pub-meta"><i>Biosystems Engineering</i>, 2009. Coautor.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.5154/r.inagbi.2009.12.020" target="_blank" rel="noopener">Predicción del crecimiento potencial de tomate de cáscara mediante el modelo SUCROS</a></p>
+          <p class="pub-autores">López-Cruz, I.L., Arteaga-Ramírez, R., Vázquez-Peña, M., López-López, R., Robles-Bañuelos, C.</p>
+          <p class="pub-meta"><i>Ingeniería Agrícola y Biosistemas</i>, 2009. Autor principal.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2008</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Analysis of greenhouse natural ventilation under the environmental conditions of central Mexico</p>
+          <p class="pub-autores">Romero-Gómez, P., López-Cruz, I.L., Choi, C.Y.</p>
+          <p class="pub-meta"><i>Transactions of the ASABE</i>, 2008. Coautor.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2007</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Modelos ARX para predecir la temperatura del aire de un invernadero: una metodología</p>
+          <p class="pub-autores">López-Cruz, I.L., Rojano-Aguilar, A., Ojeda-Bustamante, W., Salazar-Moreno, R.</p>
+          <p class="pub-meta"><i>Agrociencia</i>, 2007. Autor principal.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2005</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Modelos matemáticos de hortalizas en invernadero: trascendiendo la contemplación de la dinámica de cultivos <span class="mini-dest">Destacado</span></p>
+          <p class="pub-autores">López-Cruz, I.L., Ramírez-Arias, A., Rojano-Aguilar, A.</p>
+          <p class="pub-meta"><i>Revista Chapingo Serie Horticultura</i>, 2005. Autor principal.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2004</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://agrociencia-colpos.org/index.php/agrociencia/article/view/355" target="_blank" rel="noopener">Análisis de sensibilidad de un modelo dinámico de crecimiento para lechugas (Lactuca sativa L.) cultivadas en invernadero</a></p>
+          <p class="pub-autores">López-Cruz, I.L., Ramírez-Arias, A., Rojano-Aguilar, A.</p>
+          <p class="pub-meta"><i>Agrociencia</i>, 2004. Autor principal.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo">Spectral detection and neural network discrimination of Rhizopus stolonifer spores on red tomatoes</p>
+          <p class="pub-autores">López-Cruz, I.L., Hahn-Schlam, F., Hernández-Eugenio, G.</p>
+          <p class="pub-meta"><i>Biosystems Engineering</i>, 2004. Coautor.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">2003</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.1016/S0168-1699(03)00019-X" target="_blank" rel="noopener">Optimal control of nitrate in lettuce by a hybrid approach: differential evolution and adjustable control weight gradient algorithms</a> <span class="mini-dest">Destacado</span></p>
+          <p class="pub-autores">López-Cruz, I.L., van Willigenburg, L.G., van Straten, G.</p>
+          <p class="pub-meta"><i>Computers and Electronics in Agriculture</i>, 2003. Autor principal.</p>
+        </li>
+        <li class="pub">
+          <p class="pub-titulo"><a href="https://doi.org/10.1016/S1568-4946(03)00007-3" target="_blank" rel="noopener">Efficient differential evolution algorithms for multimodal optimal control problems</a> <span class="mini-dest">Destacado</span></p>
+          <p class="pub-autores">López-Cruz, I.L., van Willigenburg, L.G., van Straten, G.</p>
+          <p class="pub-meta"><i>Applied Soft Computing</i>, 2003. Autor de correspondencia.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="anio-grupo">
+      <h3 class="anio">1999</h3>
+      <ol class="lista-pub">
+        <li class="pub">
+          <p class="pub-titulo">Calibration and sensitivity analysis of a dynamic model for control of nitrate in lettuce</p>
+          <p class="pub-autores">Buwalda, F., Seginer, I., van Straten, G., López-Cruz, I.L.</p>
+          <p class="pub-meta"><i>Acta Horticulturae</i>, 1999. Coautor.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="contenedor footer-inner">
+    <p>Perfil académico generado a partir del CVU (No. 121196) — SECIHTI.</p>
+    <p><a href="mailto:ilopez@correo.chapingo.mx">ilopez@correo.chapingo.mx</a> · Universidad Autónoma Chapingo</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+<script>
+// Filtro de la lista completa de artículos
+(function(){
+  const input=document.getElementById('filtroPub');
+  if(!input) return;
+  const items=[...document.querySelectorAll('.lista-pub .pub')];
+  const grupos=[...document.querySelectorAll('.anio-grupo')];
+  const conteo=document.getElementById('conteoPub');
+  const vacio=document.getElementById('sinResultados');
+  const norm=t=>t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  items.forEach(li=>{li.dataset.q=norm(li.textContent+' '+li.closest('.anio-grupo').querySelector('.anio').textContent);});
+  input.addEventListener('input',()=>{
+    const q=norm(input.value.trim());
+    let n=0;
+    items.forEach(li=>{const ok=!q||li.dataset.q.includes(q);li.hidden=!ok;if(ok)n++;});
+    grupos.forEach(g=>{g.hidden=!g.querySelector('.pub:not([hidden])');});
+    conteo.textContent=n+' de '+items.length+' artículos';
+    vacio.hidden=n>0;
+  });
+})();
+</script>
+
+</body>
+</html>

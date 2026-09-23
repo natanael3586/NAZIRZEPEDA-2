@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Irineo L. López Cruz</title>
+<meta name="description" content="Perfil académico de Irineo Lorenzo López Cruz — Universidad Autónoma Chapingo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/contacto.css">
+</head>
+<style>
+  /* ===== CONTACTO ===== */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;text-align:center;}
+.contact-grid b{display:block;color:var(--texto);font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.contact-grid a{font-weight:600;text-decoration:none;}
+.contact-grid a:hover{text-decoration:underline;}
+ :root{
+  --bg:#fafbfa;
+  --surface:#ffffff;
+  --surface-2:#f2f5f3;
+  --texto:#1a2420;
+  --gris:#5c6b64;
+  --verde:#0e7a52;
+  --verde-osc:#0a5c3e;
+  --verde-claro:#e6f4ee;
+  --acento:#b8860b;
+  --borde:#e2e8e4;
+  --sombra:0 2px 8px rgba(16,42,32,.06),0 12px 32px rgba(16,42,32,.07);
+  --radio:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--texto);line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.brand{font-family:'Sora',sans-serif;letter-spacing:-.02em;}
+a{color:var(--verde);transition:color .2s;}
+a:hover{color:var(--verde-osc);}
+img{max-width:100%;display:block;}
+.contenedor{max-width:1120px;margin:0 auto;padding:0 24px;}
+.contenedor-narrow{max-width:780px;}
+
+/* ===== NAVBAR ===== */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--borde);}
+.nav-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.brand{font-weight:800;font-size:1.06rem;color:var(--texto);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.brand:hover{color:var(--texto);}
+.brand-dot{width:11px;height:11px;border-radius:3px;background:linear-gradient(135deg,var(--verde),#2ea87c);flex-shrink:0;}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-link{color:var(--gris);text-decoration:none;font-size:.9rem;font-weight:600;padding:9px 18px;border-radius:8px;transition:.2s;}
+.nav-link:hover{color:var(--texto);background:var(--surface-2);}
+.nav-link.active{color:#fff;background:var(--verde);}
+.nav-link.active:hover{color:#fff;background:var(--verde-osc);}
+.nav-toggle{display:none;background:none;border:1px solid var(--borde);color:var(--texto);font-size:1.15rem;border-radius:8px;padding:5px 12px;cursor:pointer;}
+
+/* ===== BOTONES ===== */
+.btn{display:inline-block;font-weight:600;font-size:.93rem;text-decoration:none;padding:13px 30px;border-radius:10px;cursor:pointer;transition:.22s;border:1px solid transparent;}
+.btn-primary{color:#fff;background:var(--verde);}
+.btn-primary:hover{color:#fff;background:var(--verde-osc);transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,122,82,.25);}
+.btn-ghost{color:var(--texto);border-color:var(--borde);background:var(--surface);}
+.btn-ghost:hover{color:var(--verde);border-color:var(--verde);transform:translateY(-2px);}
+
+/* ===== ENCABEZADO DE PÁGINAS INTERNAS ===== */
+.page-hero{background:linear-gradient(160deg,var(--verde-osc) 0%,var(--verde) 100%);padding:88px 24px 64px;text-align:center;position:relative;overflow:hidden;}
+.page-hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 10%,rgba(255,255,255,.10),transparent 60%);}
+.page-hero .contenedor{position:relative;z-index:1;}
+.page-hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff;}
+.page-sub{color:rgba(255,255,255,.82);max-width:720px;margin:14px auto 0;font-size:1.02rem;}
+
+/* ===== PANEL ===== */
+.panel{background:var(--surface);border:1px solid var(--borde);border-radius:var(--radio);padding:32px;box-shadow:var(--sombra);}
+.panel p{margin-bottom:14px;color:#33413b;text-align:justify;}
+.panel p:last-child{margin-bottom:0;}
+.panel b{color:var(--texto);}
+
+/* ===== CTA ===== */
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px;}
+
+/* ===== FOOTER ===== */
+.footer{border-top:1px solid var(--borde);background:var(--surface-2);padding:34px 0;text-align:center;color:var(--gris);font-size:.88rem;}
+.footer a{color:var(--verde);text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+.footer p{margin-bottom:4px;}
+
+/* ===== ANIMACIÓN REVEAL ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:760px){
+  .nav-toggle{display:block;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--borde);padding:12px 24px;gap:4px;box-shadow:var(--sombra);}
+  .nav-links.open{display:flex;}
+  .nav-link{text-align:center;}
+}
+</style>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Irineo L. López Cruz</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="publicaciones.html" class="nav-link">Publicaciones</a>
+      <a href="docencia.html" class="nav-link">Docencia</a>
+      <a href="trayectoria.html" class="nav-link">Trayectoria</a>
+      <a href="contacto.html" class="nav-link active">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="contenedor reveal">
+    <h1>Contacto</h1>
+    <p class="page-sub">Universidad Autónoma Chapingo — Postgrado en Ingeniería Agrícola y Uso Integral del Agua</p>
+  </div>
+</header>
+
+<section class="seccion">
+  <div class="contenedor contenedor-narrow">
+    <div class="panel reveal contact-grid">
+      <div><b>Correo</b><a href="mailto:ilopez@correo.chapingo.mx">ilopez@correo.chapingo.mx</a></div>
+      <div><b>Teléfono</b>+52 595 120 4558</div>
+      <div><b>Ubicación</b>Tepetlaoxtoc, Estado de México, México</div>
+      <div><b>Afiliación</b>Universidad Autónoma Chapingo · Ingeniería Mecánica Agrícola</div>
+    </div>
+    <div class="cta reveal">
+      <a class="btn btn-primary" target="_blank" href="https://scholar.google.com/citations?hl=es&user=7SDLNWGAAAAJ">Google Scholar</a>
+      <a class="btn btn-ghost" href="index.html">Volver al inicio</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="contenedor footer-inner">
+    <p>Perfil académico generado a partir del CVU (No. 121196) — SECIHTI.</p>
+    <p><a href="mailto:ilopez@correo.chapingo.mx">ilopez@correo.chapingo.mx</a> · Universidad Autónoma Chapingo</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

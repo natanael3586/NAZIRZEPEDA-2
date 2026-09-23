@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docencia y tutoría | Irineo L. López Cruz</title>
+<meta name="description" content="Perfil académico de Irineo Lorenzo López Cruz — Universidad Autónoma Chapingo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafbfa;--surface:#fff;--surface-2:#f2f5f3;--texto:#1a2420;--gris:#5c6b64;--verde:#0e7a52;--verde-osc:#0a5c3e;--verde-claro:#e6f4ee;--acento:#b8860b;--borde:#e2e8e4;--sombra:0 2px 8px rgba(16,42,32,.06),0 12px 32px rgba(16,42,32,.07);--radio:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+[hidden]{display:none!important;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--texto);line-height:1.7;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,.brand{font-family:'Sora',sans-serif;letter-spacing:-.02em;}
+a{color:var(--verde);}
+.contenedor{max-width:1120px;margin:0 auto;padding:0 24px;}
+/* Navbar */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--borde);}
+.nav-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;}
+.brand{font-weight:800;font-size:1.06rem;color:var(--texto);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.brand-dot{width:11px;height:11px;border-radius:3px;background:linear-gradient(135deg,var(--verde),#2ea87c);}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-link{color:var(--gris);text-decoration:none;font-size:.9rem;font-weight:600;padding:9px 18px;border-radius:8px;}
+.nav-link:hover{color:var(--texto);background:var(--surface-2);}
+.nav-link.active{color:#fff;background:var(--verde);}
+.nav-toggle{display:none;background:none;border:1px solid var(--borde);font-size:1.15rem;border-radius:8px;padding:5px 12px;cursor:pointer;}
+/* Encabezado */
+.page-hero{background:linear-gradient(160deg,var(--verde-osc),var(--verde));padding:88px 24px 64px;text-align:center;}
+.page-hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff;}
+.page-sub{color:rgba(255,255,255,.85);max-width:720px;margin:14px auto 0;}
+/* Secciones */
+.seccion{padding:64px 0;}
+.titulo{font-size:clamp(1.5rem,3vw,2rem);margin:48px 0 20px;}
+.titulo:first-child{margin-top:0;}
+.panel{background:var(--surface);border:1px solid var(--borde);border-radius:var(--radio);padding:32px;box-shadow:var(--sombra);}
+.panel p{color:#33413b;text-align:justify;}
+.intro{color:var(--gris);margin:-8px 0 18px;}
+/* Filtros */
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.chip{font:inherit;font-size:.85rem;font-weight:600;padding:7px 16px;border-radius:999px;border:1px solid var(--borde);background:var(--surface);color:var(--gris);cursor:pointer;}
+.chip:hover{border-color:var(--verde);color:var(--verde);}
+.chip.activo{background:var(--verde);border-color:var(--verde);color:#fff;}
+.buscador{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:24px;}
+.buscador label{width:100%;font-size:.85rem;font-weight:600;}
+.buscador input{flex:1 1 280px;font:inherit;padding:11px 14px;border:1px solid var(--borde);border-radius:10px;background:var(--surface);}
+.buscador input:focus{outline:2px solid var(--verde);outline-offset:1px;}
+.conteo,.vacio{font-size:.85rem;color:var(--gris);}
+/* Cursos por año */
+.anio-grupo{display:grid;grid-template-columns:88px 1fr;gap:0 24px;border-top:1px solid var(--borde);padding:18px 0;}
+.anio{font-size:1.5rem;color:var(--verde);line-height:1.2;position:sticky;top:76px;align-self:start;}
+.lista-cursos{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px 24px;}
+.curso{display:flex;flex-direction:column;padding:4px 0 4px 14px;border-left:3px solid var(--verde);}
+.curso[data-nivel="L"]{border-left-color:#7cc4a4;}
+.curso[data-nivel="PR"]{border-left-color:var(--acento);}
+.curso b{line-height:1.4;}
+.curso .meta{font-size:.84rem;color:var(--verde-osc);}
+.curso .prog{font-size:.82rem;color:var(--gris);}
+/* Tesis */
+.lista{list-style:none;}
+.lista li{background:var(--surface);border:1px solid var(--borde);border-left:4px solid var(--verde);border-radius:10px;padding:16px 22px;margin-bottom:12px;font-size:.93rem;color:#33413b;}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;color:#fff;background:var(--verde);border-radius:6px;padding:3px 12px;margin-left:8px;}
+.rol{display:inline-block;font-size:.72rem;font-weight:700;color:var(--verde-osc);background:var(--verde-claro);border-radius:6px;padding:3px 10px;margin-left:6px;}
+.dest{display:inline-block;font-size:.7rem;font-weight:700;color:var(--acento);border:1px solid var(--acento);border-radius:999px;padding:1px 8px;margin-left:6px;}
+/* Pie */
+.footer{border-top:1px solid var(--borde);background:var(--surface-2);padding:34px 0;text-align:center;color:var(--gris);font-size:.88rem;}
+@media(max-width:760px){
+  .nav-toggle{display:block;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--borde);padding:12px 24px;box-shadow:var(--sombra);}
+  .nav-links.open{display:flex;}
+  .anio-grupo{grid-template-columns:1fr;}
+  .anio{position:static;font-size:1.25rem;margin-bottom:8px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Irineo L. López Cruz</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="publicaciones.html" class="nav-link">Publicaciones</a>
+      <a href="docencia.html" class="nav-link active">Docencia</a>
+      <a href="trayectoria.html" class="nav-link">Trayectoria</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <h1>Docencia y tutoría</h1>
+  <p class="page-sub">87 cursos impartidos y 17 tesis dirigidas — Universidad Autónoma Chapingo</p>
+</header>
+
+<section class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo">Cursos</h2>
+    <div class="panel">
+      <p>Ha impartido cursos a nivel licenciatura, maestría y doctorado: Ingeniería de Sistemas, Simulación de Biosistemas, Ingeniería de Control, Ingeniería de Control Moderno, Optimización de Procesos, Algoritmos Evolutivos y Bio-inspirados, Modelación y Simulación Avanzada de Biosistemas, Introducción a la Teoría de Control Óptimo, Metodología de la Investigación e Introducción a la Filosofía de la Ciencia.</p>
+    </div>
+
+    <h2 class="titulo">Todos los cursos impartidos</h2>
+    <p class="intro">Cursos registrados en el CVU, del más reciente al más antiguo. En los registros de posgrado anteriores a 2015 el CVU no indica si fue maestría o doctorado.</p>
+    <div class="filtros" id="filtros"></div>
+    <div class="buscador">
+      <label for="buscar">Buscar curso por nombre, programa o año</label>
+      <input type="search" id="buscar" placeholder="Ej. control, simulación, 2019…" autocomplete="off">
+      <span class="conteo" id="conteo" aria-live="polite"></span>
+    </div>
+    <p class="vacio" id="vacio" hidden>Ningún curso coincide con el filtro. Prueba con otra palabra o elige "Todos".</p>
+    <div id="cursos"></div>
+
+    <h2 class="titulo">Tesis dirigidas (17)</h2>
+    <ul class="lista" id="tesis"></ul>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Perfil académico generado a partir del CVU (No. 121196) — SECIHTI.</p>
+  <p><a href="mailto:ilopez@correo.chapingo.mx">ilopez@correo.chapingo.mx</a> · Universidad Autónoma Chapingo</p>
+</footer>
+
+<script>
+// ===== DATOS DEL CVU =====
+// Cursos: [nombre, inicio (AAAA-MM), fin, nivel, programa]
+// Niveles: L = Licenciatura, M = Maestría, D = Doctorado, P = Posgrado (sin nivel en el CVU), PR = Preparatoria
+const CURSOS = [
+  ["Control Óptimo", "2023-01", "2023-05", "D", ""],
+  ["Metodología de la Investigación", "2022-08", "2022-12", "M", ""],
+  ["Introducción a los Algoritmos Evolutivos y Bioinspirados", "2022-08", "2022-12", "D", ""],
+  ["Introducción a los Algoritmos Evolutivos y Bioinspirados", "2022-08", "2022-12", "M", ""],
+  ["Optimización de Procesos", "2022-08", "2022-12", "L", "Ingeniería Mecánica Agrícola"],
+  ["Ingeniería de Sistemas", "2022-08", "2022-12", "L", "Ingeniería Mecánica Agrícola"],
+  ["Control Moderno", "2022-02", "2022-06", "L", "Ingeniería Mecatrónica Agrícola"],
+  ["Ingeniería de Sistemas", "2021-09", "2022-02", "L", "Ingeniería Mecánica Agrícola"],
+  ["Metodología de la Investigación", "2021-08", "2021-12", "M", ""],
+  ["Control Moderno", "2021-02", "2021-06", "L", "Ingeniería Mecatrónica Agrícola"],
+  ["Modelación y Simulación de Sistemas Biológicos Avanzada", "2021-02", "2021-06", "D", ""],
+  ["Metodología de la Investigación", "2020-08", "2020-12", "M", ""],
+  ["Introducción al Control Óptimo", "2020-08", "2020-12", "L", "Ingeniería Mecatrónica Agrícola"],
+  ["Ingeniería de Control Ambiental I", "2020-01", "2020-06", "M", ""],
+  ["Introducción a los Algoritmos Evolutivos y Bioinspirados", "2020-01", "2020-06", "D", ""],
+  ["Metodología de la Investigación", "2019-08", "2019-12", "M", ""],
+  ["Ingeniería de Sistemas", "2019-08", "2019-12", "L", "Ingeniería Mecánica Agrícola"],
+  ["Ingeniería de Control Ambiental I", "2019-01", "2019-06", "M", ""],
+  ["Metodología de la Investigación", "2018-08", "2018-12", "M", ""],
+  ["Optimización de Procesos", "2018-08", "2018-12", "L", "Ingeniería Mecánica Agrícola"],
+  ["Introducción a los Algoritmos Evolutivos y Bioinspirados", "2018-01", "2018-06", "M", ""],
+  ["Simulación Avanzada", "2017-08", "2017-12", "D", ""],
+  ["Modelado de Ambientes Protegidos", "2017-08", "2017-12", "L", "Horticultura"],
+  ["Introducción a los Algoritmos Evolutivos y Bio-inspirados", "2017-01", "2017-06", "M", ""],
+  ["Ingeniería de Control Ambiental I", "2017-01", "2017-06", "M", ""],
+  ["Control Óptimo", "2016-08", "2016-12", "M", ""],
+  ["Sistemas de Automatización", "2016-08", "2016-12", "L", "Fitotecnia"],
+  ["Simulación de Procesos Biológicos Avanzados", "2016-01", "2016-07", "M", ""],
+  ["Simulación de Procesos Biológicos Avanzados", "2016-01", "2016-07", "D", ""],
+  ["Simulación Avanzada", "2015-08", "2015-12", "D", ""],
+  ["Ingeniería de Control Ambiental I", "2015-01", "2015-07", "M", ""],
+  ["Introducción a los Algoritmos Evolutivos y Bio-inspirados", "2015-01", "2015-07", "M", ""],
+  ["Introducción a la Optimización Dinámica", "2013-08", "2013-12", "P", ""],
+  ["Metodología de la Investigación", "2013-08", "2013-12", "P", ""],
+  ["Simulación de Sistemas Biológicos", "2013-01", "2013-06", "P", ""],
+  ["Ingeniería de Control Ambiental I", "2013-01", "2013-06", "P", ""],
+  ["Metodología de la Investigación", "2012-08", "2012-12", "P", ""],
+  ["Introducción a los Algoritmos Evolutivos y Bio-inspirados", "2012-08", "2012-12", "P", ""],
+  ["Simulación de Sistemas Biológicos", "2012-01", "2012-06", "P", ""],
+  ["Ingeniería de Control Ambiental I", "2012-01", "2012-06", "P", ""],
+  ["Metodología de la Investigación", "2011-08", "2011-12", "P", ""],
+  ["Introducción a la Optimización y Algoritmos Evolutivos", "2011-08", "2011-12", "P", ""],
+  ["Simulación de Sistemas Biológicos", "2011-01", "2011-06", "P", ""],
+  ["Ingeniería de Control Ambiental I", "2011-01", "2011-06", "P", ""],
+  ["Simulación de Sistemas Dinámicos", "2010-08", "2010-12", "P", ""],
+  ["Modelado de Ambientes Protegidos", "2010-08", "2010-12", "L", "Fitotecnia"],
+  ["Introducción a la Identificación de Sistemas", "2010-08", "2010-12", "P", ""],
+  ["Metodología de la Investigación", "2010-08", "2010-12", "P", ""],
+  ["Simulación de Sistemas Biológicos", "2010-01", "2010-06", "P", ""],
+  ["Ingeniería de Control Ambiental", "2010-01", "2010-06", "P", ""],
+  ["Tópicos Avanzados de Modelación de Cultivos", "2010-01", "2010-06", "P", ""],
+  ["Introducción a la Identificación de Sistemas", "2009-08", "2009-12", "P", ""],
+  ["Metodología de la Investigación", "2009-08", "2009-12", "P", ""],
+  ["Simulación de Biosistemas", "2009-08", "2009-12", "P", ""],
+  ["Simulación de Sistemas Biológicos", "2009-01", "2009-06", "P", ""],
+  ["Ingeniería de Control Ambiental I", "2009-01", "2009-06", "P", ""],
+  ["Metodología de la Investigación", "2008-08", "2008-12", "P", ""],
+  ["Simulación de Sistemas Biológicos", "2008-08", "2008-12", "P", ""],
+  ["Simulación de Sistemas Biológicos", "2008-01", "2008-06", "P", ""],
+  ["Simulación de Biosistemas", "2008-01", "2008-06", "P", ""],
+  ["Simulación de Biosistemas", "2007-08", "2007-12", "P", ""],
+  ["Introducción a la Optimización y Algoritmos Evolutivos", "2006-07", "2006-12", "P", ""],
+  ["Metodología de la Investigación", "2006-07", "2006-12", "P", ""],
+  ["Ingeniería de Sistemas", "2006-07", "2006-12", "L", "Ingeniería Mecánica Agrícola"],
+  ["Ingeniería de Control Ambiental", "2006-01", "2006-06", "P", ""],
+  ["Simulación de Sistemas Biológicos", "2005-07", "2005-12", "P", ""],
+  ["Ingeniería de Control Ambiental", "2005-07", "2005-12", "P", ""],
+  ["Simulación de Sistemas Biológicos", "2005-07", "2005-12", "P", ""],
+  ["Fundamentos de Simulación e Inteligencia Artificial", "2005-01", "2005-06", "L", "Estadística"],
+  ["Ingeniería de Control Ambiental", "2005-01", "2005-06", "P", ""],
+  ["Identificación de Sistemas", "2005-01", "2005-06", "P", ""],
+  ["Matemáticas I", "2004-07", "2004-12", "PR", "Preparatoria Agrícola"],
+  ["Simulación de Sistemas Biológicos", "2004-07", "2004-12", "P", ""],
+  ["Ingeniería de Control Ambiental", "2004-01", "2004-06", "P", ""],
+  ["Temas Selectos de Modelación", "2004-01", "2004-06", "P", ""],
+  ["Introducción a la Teoría de Control Óptimo", "2003-07", "2003-12", "P", ""],
+  ["Ingeniería de Sistemas", "2003-07", "2003-12", "L", "Ingeniería en Restauración Forestal"],
+  ["Simulación de Sistemas Biológicos", "2003-07", "2003-12", "P", ""],
+  ["Introducción a la Teoría de Control Óptimo", "2003-01", "2003-06", "D", "Doctorado en Ingeniería Agrícola y Uso Integral del Agua"],
+  ["Ingeniería de Control Ambiental", "2003-01", "2003-06", "P", ""],
+  ["Simulación de Sistemas Biológicos", "2002-07", "2002-12", "P", ""],
+  ["Lenguaje de Programación C", "1995-01", "1995-06", "L", "Ingeniería Mecánica Agrícola"],
+  ["Introducción a la Computación", "1992-01", "1992-06", "PR", "Preparatoria Agrícola"],
+  ["Ingeniería del Conocimiento", "1992-01", "1992-06", "M", "Maestría en Inteligencia Artificial · Fundación Arturo Rosenblueth"],
+  ["Agricultura Regional I", "1985-01", "1985-06", "PR", "Preparatoria Agrícola"],
+  ["Agricultura Regional II", "1985-01", "1985-06", "PR", "Preparatoria Agrícola"],
+  ["Agricultura Regional III", "1985-01", "1985-06", "PR", "Preparatoria Agrícola"]
+];
+
+// Tesis: [estudiante, título, grado, año, codirección (1/0), destacada (1/0)]
+const TESIS = [
+  ["Ulises Zacarías Herrera", "Simulación de un sistema secador solar tipo invernadero mediante CFD", "Maestría", 2022, 0, 0],
+  ["José Olaf Valencia Islas", "Modeling and optimization of a greenhouse-type solar dryer system", "Doctorado", 2022, 1, 1],
+  ["Miguel Servín Palestina", "Modelación dinámica del crecimiento y desarrollo de frijol (Phaseolus vulgaris L.) con diferentes niveles de agua en el suelo", "Doctorado", 2022, 0, 1],
+  ["Jainer Oniel Sosa Calix", "Modelación de la dinámica de poblaciones de trips (Insecta: Thysanoptera) en el cultivo de aguacate (Persea americana Mill.)", "Maestría", 2021, 1, 0],
+  ["José Francisco Marín Camacho", "Modelación matemática de un secador solar tipo invernadero", "Doctorado", 2020, 0, 1],
+  ["Gamaliel López Hernández", "Modelo dinámico del agua en suelo y planta de tomate: simulación y análisis", "Maestría", 2019, 0, 0],
+  ["Mario Daniel de Acha Miranda", "Simulation and calibration of extended HORTSYST model in predicting macronutrients in tomato (Solanum lycopersicum L.)", "Maestría", 2019, 0, 0],
+  ["Felipe José Antonio Pedraza Oropeza", "Sistema computacional para el análisis de sensibilidad local automático de modelos dinámicos", "Doctorado", 2019, 0, 0],
+  ["Alejandro Guerrero Santana", "Modelos neurodifusos del clima de un secador solar tipo invernadero para deshidratado de estevia (Stevia rebaudiana L.)", "Maestría", 2019, 0, 0],
+  ["Eduardo Jiménez Hernández", "Optimización del diseño de redes de riego con algoritmos evolutivos y bio-inspirados", "Maestría", 2017, 0, 0],
+  ["Ángel Garduño García", "Construcción, evaluación y modelación matemática de un secador solar tipo invernadero", "Doctorado", 2017, 0, 0],
+  ["Antonio Martínez Ruiz", "Development, analysis and evaluation of a dynamic model of growth, transpiration and nitrogen uptake for tomatoes in greenhouses", "Doctorado", 2017, 0, 0],
+  ["José Olaf Valencia Islas", "Análisis de un modelo matemático como base de un simulador del clima de invernaderos", "Maestría", 2016, 0, 0],
+  ["Ignacio López Cerino", "Pineapple drying: mathematical modelling and experiments using high precision system and a greenhouse-type solar dryer", "Doctorado", 2015, 0, 0],
+  ["Verónica Espinal Montes", "Modelación del ambiente de un invernadero con y sin sistema de calefacción mediante dinámica de fluidos computacional 3D", "Doctorado", 2015, 0, 0],
+  ["Agustín Ruiz García", "Modelación y análisis del ambiente de un invernadero con ventilación natural", "Doctorado", 2014, 0, 0],
+  ["Elmer César Trejo Zúñiga", "Técnicas de inteligencia artificial en modelado y control del clima de invernaderos", "Doctorado", 2014, 0, 0]
+];
+
+// ===== PÁGINA =====
+const NIVELES = {L:"Licenciatura", M:"Maestría", D:"Doctorado", P:"Posgrado", PR:"Preparatoria"};
+const MESES = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+const esc = t => String(t).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm = t => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+function periodo(ini, fin) {
+  const [ya, ma] = ini.split("-").map(Number), [yb, mb] = fin.split("-").map(Number);
+  return ya === yb ? `${MESES[ma-1]}–${MESES[mb-1]} ${ya}` : `${MESES[ma-1]} ${ya} – ${MESES[mb-1]} ${yb}`;
+}
+
+// Botones de nivel
+const filtros = document.getElementById("filtros");
+const botones = [["", `Todos (${CURSOS.length})`], ...Object.keys(NIVELES).map(k => [k, `${NIVELES[k]} (${CURSOS.filter(c => c[3] === k).length})`])];
+filtros.innerHTML = botones.map(([k, txt], i) =>
+  `<button type="button" class="chip${i === 0 ? " activo" : ""}" data-nivel="${k}" aria-pressed="${i === 0}">${txt}</button>`).join("");
+
+// Cursos agrupados por año
+const anios = [...new Set(CURSOS.map(c => c[1].slice(0, 4)))];
+document.getElementById("cursos").innerHTML = anios.map(y => `
+  <div class="anio-grupo">
+    <h3 class="anio">${y}</h3>
+    <ul class="lista-cursos">${CURSOS.filter(c => c[1].startsWith(y)).map(([n, a, b, lv, pr]) => `
+      <li class="curso" data-nivel="${lv}" data-q="${esc(norm(n + " " + pr + " " + y + " " + NIVELES[lv]))}">
+        <b>${esc(n)}</b>
+        <span class="meta">${periodo(a, b)} · ${NIVELES[lv]}</span>
+        ${pr ? `<span class="prog">${esc(pr)}</span>` : ""}
+      </li>`).join("")}
+    </ul>
+  </div>`).join("");
+
+// Tesis
+document.getElementById("tesis").innerHTML = TESIS.map(([n, t, g, y, co, d]) =>
+  `<li><b>${esc(n)}</b> — ${esc(t)} <span class="pill">${g} · ${y}</span>` +
+  (co ? ` <span class="rol">Codirección</span>` : "") + (d ? ` <span class="dest">Destacado</span>` : "") + `</li>`).join("");
+
+// Filtro por nivel + búsqueda
+const items = [...document.querySelectorAll(".curso")];
+const grupos = [...document.querySelectorAll(".anio-grupo")];
+const buscar = document.getElementById("buscar");
+let nivel = "";
+function aplicar() {
+  const q = norm(buscar.value.trim());
+  let n = 0;
+  items.forEach(li => {
+    const ok = (!nivel || li.dataset.nivel === nivel) && (!q || li.dataset.q.includes(q));
+    li.hidden = !ok; if (ok) n++;
+  });
+  grupos.forEach(g => g.hidden = !g.querySelector(".curso:not([hidden])"));
+  document.getElementById("conteo").textContent = `${n} de ${items.length} cursos`;
+  document.getElementById("vacio").hidden = n > 0;
+}
+filtros.addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  filtros.querySelectorAll(".chip").forEach(x => { x.classList.remove("activo"); x.setAttribute("aria-pressed", "false"); });
+  b.classList.add("activo"); b.setAttribute("aria-pressed", "true");
+  nivel = b.dataset.nivel; aplicar();
+});
+buscar.addEventListener("input", aplicar);
+aplicar();
+
+// Menú móvil
+const toggle = document.getElementById("navToggle"), links = document.getElementById("navLinks");
+toggle.addEventListener("click", () => toggle.setAttribute("aria-expanded", links.classList.toggle("open")));
+</script>
+</body>
+</html>

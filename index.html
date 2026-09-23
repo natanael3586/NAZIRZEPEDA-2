@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio | Irineo L. López Cruz</title>
+<meta name="description" content="Perfil académico de Irineo Lorenzo López Cruz — Universidad Autónoma Chapingo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/inicio.css">
+</head>
+<style>
+  :root{
+  --bg:#fafbfa;
+  --surface:#ffffff;
+  --surface-2:#f2f5f3;
+  --texto:#1a2420;
+  --gris:#5c6b64;
+  --verde:#0e7a52;
+  --verde-osc:#0a5c3e;
+  --verde-claro:#e6f4ee;
+  --acento:#b8860b;
+  --borde:#e2e8e4;
+  --sombra:0 2px 8px rgba(16,42,32,.06),0 12px 32px rgba(16,42,32,.07);
+  --radio:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--texto);line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.brand{font-family:'Sora',sans-serif;letter-spacing:-.02em;}
+a{color:var(--verde);transition:color .2s;}
+a:hover{color:var(--verde-osc);}
+img{max-width:100%;display:block;}
+.contenedor{max-width:1120px;margin:0 auto;padding:0 24px;}
+.contenedor-narrow{max-width:780px;}
+
+/* ===== NAVBAR ===== */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--borde);}
+.nav-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.brand{font-weight:800;font-size:1.06rem;color:var(--texto);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.brand:hover{color:var(--texto);}
+.brand-dot{width:11px;height:11px;border-radius:3px;background:linear-gradient(135deg,var(--verde),#2ea87c);flex-shrink:0;}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-link{color:var(--gris);text-decoration:none;font-size:.9rem;font-weight:600;padding:9px 18px;border-radius:8px;transition:.2s;}
+.nav-link:hover{color:var(--texto);background:var(--surface-2);}
+.nav-link.active{color:#fff;background:var(--verde);}
+.nav-link.active:hover{color:#fff;background:var(--verde-osc);}
+.nav-toggle{display:none;background:none;border:1px solid var(--borde);color:var(--texto);font-size:1.15rem;border-radius:8px;padding:5px 12px;cursor:pointer;}
+
+/* ===== BOTONES ===== */
+.btn{display:inline-block;font-weight:600;font-size:.93rem;text-decoration:none;padding:13px 30px;border-radius:10px;cursor:pointer;transition:.22s;border:1px solid transparent;}
+.btn-primary{color:#fff;background:var(--verde);}
+.btn-primary:hover{color:#fff;background:var(--verde-osc);transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,122,82,.25);}
+.btn-ghost{color:var(--texto);border-color:var(--borde);background:var(--surface);}
+.btn-ghost:hover{color:var(--verde);border-color:var(--verde);transform:translateY(-2px);}
+
+/* ===== ENCABEZADO DE PÁGINAS INTERNAS ===== */
+.page-hero{background:linear-gradient(160deg,var(--verde-osc) 0%,var(--verde) 100%);padding:88px 24px 64px;text-align:center;position:relative;overflow:hidden;}
+.page-hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 10%,rgba(255,255,255,.10),transparent 60%);}
+.page-hero .contenedor{position:relative;z-index:1;}
+.page-hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff;}
+.page-sub{color:rgba(255,255,255,.82);max-width:720px;margin:14px auto 0;font-size:1.02rem;}
+
+/* ===== PANEL ===== */
+.panel{background:var(--surface);border:1px solid var(--borde);border-radius:var(--radio);padding:32px;box-shadow:var(--sombra);}
+.panel p{margin-bottom:14px;color:#33413b;text-align:justify;}
+.panel p:last-child{margin-bottom:0;}
+.panel b{color:var(--texto);}
+
+/* ===== CTA ===== */
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px;}
+
+/* ===== FOOTER ===== */
+.footer{border-top:1px solid var(--borde);background:var(--surface-2);padding:34px 0;text-align:center;color:var(--gris);font-size:.88rem;}
+.footer a{color:var(--verde);text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+.footer p{margin-bottom:4px;}
+
+/* ===== ANIMACIÓN REVEAL ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:760px){
+  .nav-toggle{display:block;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--borde);padding:12px 24px;gap:4px;box-shadow:var(--sombra);}
+  .nav-links.open{display:flex;}
+  .nav-link{text-align:center;}
+}
+
+/* ===== FOTO DE PERFIL ===== */
+.profile-photo{
+  width:150px;
+  height:150px;
+  margin:0 auto 26px;
+  border-radius:50%;
+  border:4px solid rgba(255,255,255,.75);
+  background:rgba(255,255,255,.10);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  box-shadow:0 10px 28px rgba(0,0,0,.18);
+}
+.profile-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.profile-photo .photo-placeholder{
+  color:rgba(255,255,255,.8);
+  font-size:.82rem;
+  text-align:center;
+  padding:15px;
+}
+@media(max-width:760px){
+  .profile-photo{
+    width:125px;
+    height:125px;
+  }
+}
+
+/* ===== HERO DE INICIO ===== */
+.hero{background:linear-gradient(160deg,var(--verde-osc) 0%,var(--verde) 55%,#12805a 100%);min-height:82vh;display:flex;align-items:center;position:relative;overflow:hidden;text-align:center;}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(50% 60% at 80% 15%,rgba(255,255,255,.10),transparent 65%),
+  radial-gradient(45% 55% at 10% 85%,rgba(0,0,0,.14),transparent 70%);}
+.hero-content{position:relative;padding:80px 24px;z-index:1;}
+.hero-badge{display:inline-block;font-size:.76rem;letter-spacing:2px;text-transform:uppercase;color:#a9e8cd;border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:7px 18px;margin-bottom:22px;background:rgba(255,255,255,.08);}
+.hero h1{font-size:clamp(2.2rem,6vw,3.9rem);font-weight:800;line-height:1.12;color:#fff;}
+.grad{color:#9fe8c9;}
+.hero-sub{max-width:760px;margin:20px auto 32px;color:rgba(255,255,255,.85);font-size:1.07rem;}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);}
+.hero .btn-ghost:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.16);}
+
+/* ===== SECCIONES ===== */
+.seccion{padding:76px 0;}
+.seccion.alt{background:var(--surface-2);}
+.titulo{font-size:1.6rem;color:var(--texto);margin-bottom:26px;display:flex;align-items:center;gap:12px;}
+.titulo::before{content:"";width:6px;height:26px;border-radius:3px;background:linear-gradient(180deg,var(--verde),#2ea87c);flex-shrink:0;}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:36px;}
+.stat{background:var(--surface);border:1px solid var(--borde);border-radius:var(--radio);padding:26px 16px;text-align:center;transition:.25s;}
+.stat:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:var(--verde);}
+.stat b{display:block;font-family:'Sora';font-size:2.3rem;font-weight:800;color:var(--verde);}
+.stat span{font-size:.84rem;color:var(--gris);}
+
+/* Tags */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.tag{display:inline-block;font-size:.8rem;font-weight:600;color:var(--verde-osc);background:var(--verde-claro);border:1px solid rgba(14,122,82,.18);border-radius:8px;padding:6px 14px;transition:.2s;}
+.tag:hover{background:rgba(14,122,82,.14);transform:translateY(-2px);}
+.tag.dest{color:#7a5b06;background:#fdf4dd;border-color:rgba(184,134,11,.3);}
+
+</style>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Irineo L. López Cruz</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link active">Inicio</a>
+      <a href="publicaciones.html" class="nav-link">Publicaciones</a>
+      <a href="docencia.html" class="nav-link">Docencia</a>
+      <a href="trayectoria.html" class="nav-link">Trayectoria</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="contenedor hero-content reveal">
+      <div class="profile-photo">
+      <!-- Coloca aquí tu foto de perfil cambiando "foto-perfil.jpg" por el nombre de tu imagen -->
+      <img src="Irineo.jpeg" alt="Foto de perfil">
+      </div>
+    <span class="hero-badge">CVU 121196 · SECIHTI</span>
+    <h1>Irineo Lorenzo <span class="grad">López Cruz</span></h1>
+    <p class="hero-sub">Profesor-Investigador de tiempo completo de la Universidad Autónoma Chapingo.
+    PhD en Agricultural Engineering (Wageningen). Miembro regular de la Academia Mexicana de Ciencias y SNI nivel 2.</p>
+    <div class="hero-actions">
+      <a href="publicaciones.html" class="btn btn-primary">Ver publicaciones</a>
+      <a href="contacto.html" class="btn btn-ghost">Contacto</a>
+    </div>
+  </div>
+</header>
+
+<section class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo reveal">Perfil</h2>
+    <div class="panel reveal">
+      <p>PhD en Agricultural Engineering por la Universidad de Wageningen (Países Bajos, 1997–2002). Realizó estancias de investigación en la Universidad Autónoma de Querétaro (2008), la Universidad Humboldt de Berlín (2009, 2012) y la Wageningen University &amp; Research (2014). Desde 1985 es Profesor-Investigador de tiempo completo de la Universidad Autónoma Chapingo, adscrito al Postgrado en Ingeniería Agrícola y Uso Integral del Agua y al Departamento de Ingeniería Mecánica Agrícola.</p>
+      <p>Becario CONACyT (1997–2002) para estudios de doctorado en el extranjero; beca de repatriación/consolidación institucional (2003) y miembro del Sistema Nacional de Investigadores desde 2005. En 2018 recibió el Premio Estado de México de Ciencia y Tecnología; desde 2020 es miembro regular de la Academia Mexicana de Ciencias, miembro de la ISHS y desde 2024 forma parte del Consejo Editorial de <i>Biosystems Engineering</i>.</p>
+      <p>Su línea principal es la Ingeniería en Biosistemas: modelación matemática, optimización y control de biosistemas; modelación y control del clima de ambientes agrícolas controlados (invernaderos, fábricas de plantas, secadores solares, biorreactores); modelación del crecimiento de cultivos en invernadero y campo abierto, y aplicación de Inteligencia Artificial en la Agricultura.</p>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><b data-count="56">0</b><span>Artículos científicos</span></div>
+      <div class="stat"><b data-count="25">0</b><span>Capítulos de libro</span></div>
+      <div class="stat"><b data-count="87">0</b><span>Cursos impartidos</span></div>
+      <div class="stat"><b data-count="17">0</b><span>Tesis dirigidas</span></div>
+      <div class="stat"><b data-count="63">0</b><span>Congresos</span></div>
+      <div class="stat"><b data-count="22">0</b><span>Distinciones y premios</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion alt">
+  <div class="contenedor">
+    <h2 class="titulo reveal">Líneas de investigación</h2>
+    <div class="panel reveal">
+      <p><b>Área:</b> Ciencias de Agricultura, Agropecuarias, Forestales y de Ecosistemas — Ingeniería Agrícola (Mecánica Agrícola).</p>
+      <div class="tags">
+        <span class="tag">Modelación matemática, optimización y control de biosistemas agrícolas</span>
+        <span class="tag">Control automático del biosistema invernadero</span>
+        <span class="tag">Agricultura en ambiente controlado</span>
+        <span class="tag">Crecimiento de cultivos en campo abierto</span>
+        <span class="tag">Secadores solares tipo invernadero</span>
+        <span class="tag">Sistemas neuro-difusos</span>
+        <span class="tag">Computación evolutiva</span>
+        <span class="tag">Algoritmos bio-inspirados</span>
+      </div>
+    </div>
+    <h2 class="titulo reveal" style="margin-top:48px;">Habilidades</h2>
+    <div class="panel reveal">
+      <div class="tags">
+        <span class="tag">MATLAB / Simulink · 100%</span>
+        <span class="tag">Fortran (FST) · 100%</span>
+        <span class="tag">Python · 75%</span>
+        <span class="tag">Lenguaje C · 75%</span>
+        <span class="tag">Lenguaje R · 75%</span>
+        <span class="tag">Stella · 75%</span>
+        <span class="tag">NetLogo · 50%</span>
+        <span class="tag">Inglés avanzado · certificado</span>
+      </div>
+    </div>
+    <div class="cta reveal">
+      <a href="trayectoria.html" class="btn btn-primary">Ver trayectoria completa</a>
+      <a href="docencia.html" class="btn btn-ghost">Docencia y tesis</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="contenedor footer-inner">
+    <p>Perfil académico generado a partir del CVU (No. 121196) — SECIHTI.</p>
+    <p><a href="mailto:ilopez@correo.chapingo.mx">ilopez@correo.chapingo.mx</a> · Universidad Autónoma Chapingo</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
